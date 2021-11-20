@@ -7,6 +7,12 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.9",
+    "multer": "^1.4.3",
+    "nodemailer": "^6.7.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0"
   },

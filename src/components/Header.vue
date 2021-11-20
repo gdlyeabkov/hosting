@@ -48,12 +48,60 @@
                 </span>
             </div>
         </div>
+        <div class="headerBreadcrumbs" v-if="showBreadcrumbs">
+            <span class="headerBreadcrumbsHeader">
+                {{ breadcrumbsHeader }}
+            </span>
+            <div class="headerBreadcrumbsItems">
+                <span class="headerBreadcrumbsItem" v-for="breadcrumbsItem in breadcrumbsItems" :key="breadcrumbsItem">
+                    {{
+                        breadcrumbsItem
+                    }}
+                </span>
+            </div>
+        </div>
+        <Auth v-if="isAuth" @closeAuthDialog="closeAuthDialogHandler" />
+        <CookiesAlert v-if="isCookies" @closeCookiesDialog="closeCookieDialogHandler" />
     </div>
 </template>
 
 <script>
-export default {
 
+import Auth from '@/components/Auth.vue'
+import CookiesAlert from '@/components/CookiesAlert.vue'
+
+export default {
+    name: 'Header',
+    data() {
+        return {
+            isAuth: true,
+            isCookies: true,
+            domain: ''
+        }
+    },
+    props: {
+        showBreadcrumbs: {
+            type: Boolean
+        },
+        breadcrumbsHeader: {
+            type: String
+        },
+        breadcrumbsItems: {
+            type: Array
+        }
+    },
+    methods: {
+        closeAuthDialogHandler() {
+            this.isAuth = false
+        },
+        closeCookieDialogHandler() {
+            this.isCookies = false
+        }
+    },
+    components: {
+        Auth,
+        CookiesAlert
+    }
 }
 </script>
 
@@ -105,5 +153,34 @@ export default {
     .headerBottomItem:hover {
         background-color: rgb(0, 150, 250);
     }
+
+    .headerBreadcrumbs {
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0px 25px;
+        align-items: center;
+        height: 50px;
+    }
+
+    .headerBreadcrumbsHeader {
+        font-weight: bolder;
+        font-size: 20px;
+    }
+
+    .headerBreadcrumbsItems {
+        display: flex;
+    }
+
+    .headerBreadcrumbsItem {
+        width: 100px;
+        cursor: pointer;
+    }
+
+    .headerBreadcrumbsItem:hover {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+    }
+
 
 </style>
