@@ -81,7 +81,10 @@ const SiteModel = mongoose.model('SiteModel', SiteSchema)
 
 const DomainSchema = new mongoose.Schema({
     name: String,
-    isSell: Boolean,
+    isSell: {
+        type: Boolean,
+        default: true
+    },
     price: Number,
     created: {
         type: Date,
@@ -118,7 +121,7 @@ app.get('/api/deployers/create', async (req, res)=>{
         let deployerExists = false
 
         if(allDeployers >= 1) {
-            allDeployers.forEach(user => {
+            allDeployers.forEach(deployer => {
                 if(deployer.email === req.query.deployeremail || deployer.phone === req.query.deployerphone){
                     deployerExists = true
                 }
@@ -161,6 +164,91 @@ app.get('/api/deployers/create', async (req, res)=>{
     })
 })
 
+app.get('/api/domains/create', async (req, res)=>{
+    
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+
+    let query = DomainModel.find({  })
+    query.exec((err, allDeployers) => {
+        if (err){
+            return res.json({ "status": "Error" })
+        }
+        
+        let domainExists = false
+
+        if(allDomains >= 1) {
+            allDomains.forEach(domain => {
+                if(domain.name === req.query.domainname){
+                    domainExists = true
+                }
+            })
+        }
+        if(domainExists){
+            return res.json({ status: 'Error' })
+        } else {
+            const newDomain = new DomainModel({ name: req.query.domainname, deployer: req.query.deployerid, price: Number(req.query.domainprice) })
+            newDomain.save(function (err) {
+                if(err){
+                    return res.json({ "status": "Error" })
+                } else {
+                    return res.json({ status: 'OK' })
+                }
+            })
+        }
+    })
+})
+
+app.get('/api/sites/create', async (req, res)=>{
+    
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+
+    let query = SiteModel.find({  })
+    query.exec((err, allSites) => {
+        if (err){
+            return res.json({ "status": "Error" })
+        }
+        
+        let siteExists = false
+
+        if(allSites >= 1) {
+            allSites.forEach(site => {
+                if(site.domain === req.query.sitedomain){
+                    siteExists = true
+                }
+            })
+        }
+        if(siteExists){
+            return res.json({ status: 'Error' })
+        } else {
+            const newSite = new SiteModel({ domain: req.query.sitedomain, deployer: req.query.deployerid, price: Number(req.query.siteprice) })
+            newSite.save(function (err) {
+                if(err){
+                    return res.json({ "status": "Error" })
+                } else {
+                    let mailOptions = {
+                        from: `"${'gdlyeabkov'}" <${"gdlyeabkov"}>`,
+                        to: `${deployer.email}`,
+                        subject: `Hosting поздравляет вас с запуском сайта ${req.query.sitename}`,
+                        html: `<h3>Вы запустили сайт</h3><p>Сайт ${req.query.sitename} успешно запущен</p>`,
+                    }
+                    transporter.sendMail(mailOptions, function (err, info) {
+                        if (err) {
+                            return res.json({ "status": "Error" })
+                        } else {
+                            return res.json({ status: 'OK' })
+                        }
+                    })
+                }
+            })
+        }
+    })
+})
 
 app.get('/api/deployers/check', (req, res) => {
     

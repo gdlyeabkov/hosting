@@ -37,8 +37,111 @@
           </span>
         </div>
       </div>
-      <div>
-
+      <div class="domainsRegister">
+        <span class="domainsRegisterHeader">
+          Регистрация доменов
+        </span>
+        <div class="domainsRegisterInfo">
+          <span class="domainsRegisterInfoItem domainsRegisterInfoItemHeader">
+            3 300 000 доменов на обслуживании, № 1 в России
+          </span>
+          <div class="domainsRegisterInfoItem">
+            <span class="domainsRegisterInfoItemAction">
+              Продлить
+            </span>
+            <span class="domainsRegisterInfoItemAction">
+              Перенести в REG.RU
+            </span>
+            <span class="domainsRegisterInfoItemAction">
+              Регистрация списком
+            </span>
+          </div>
+        </div>
+        <div class="input-group inputRailwayDatePicker">
+          <input v-model="domain" type="text" placeholder="Введите домены или слово" class="form-control w-50" />
+          <span  class="input-group-text btn btn-success" id="basic-addon1" @click="selectDomains()" >Подобрать</span>
+        </div>
+        <div class="domainsZones">
+          <div class="domainZone">
+            <input type="checkbox" v-model="domainsZones" />
+            <label class="domainZoneLabel">
+              .RU
+            </label>
+          </div>
+          <div class="domainZone">
+            <input type="checkbox" v-model="domainsZones" />
+            <label class="domainZoneLabel">
+              .РФ
+            </label>
+          </div>
+          <div class="domainZone">
+            <input type="checkbox" v-model="domainsZones" />
+            <label class="domainZoneLabel">
+              .COM
+            </label>
+          </div>
+          <div class="domainZone">
+            <input type="checkbox" v-model="domainsZones" />
+            <label class="domainZoneLabel">
+              .РУС
+            </label>
+          </div>
+          <div class="domainZone">
+            <input type="checkbox" v-model="domainsZones" />
+            <label class="domainZoneLabel">
+              .MOSCOW
+            </label>
+          </div>
+          <div class="domainZone">
+            <input type="checkbox" v-model="domainsZones" />
+            <label class="domainZoneLabel">
+              .ORG
+            </label>
+          </div>
+          <div class="domainZone">
+            <input type="checkbox" v-model="domainsZones" />
+            <label class="domainZoneLabel">
+              .XYZ
+            </label>
+          </div>
+          <div class="domainZone">
+            <input type="checkbox" v-model="domainsZones" />
+            <label class="domainZoneLabel">
+              .SHOP
+            </label>
+          </div>
+          <div class="domainZone">
+            <label class="domainZoneLabel">
+              еще 742 зоны
+            </label>
+          </div>
+        </div>
+        <div class="domainsActions">
+          <div class="domainsAction notLastDomainsAction">
+            <span class="domainsActionHeader">
+              Скидки до 97%
+            </span>
+            <span class="domainsActionContent">
+              Актуальные акции
+            </span>
+          </div>
+          <div class="domainsAction notLastDomainsAction">
+            <span class="domainsActionHeader">
+              Бесплатно
+            </span>
+            <span class="domainsActionContent">
+              SSL-сертификат к домену и хостингу
+            </span>
+          </div>
+          <div class="domainsAction">
+            <span class="domainsActionHeader">
+              Подарок
+            </span>
+            <span class="domainsActionContent">
+              с каждым доменом
+            </span>
+          </div>
+        </div>
       </div>
       <div>
 
@@ -399,6 +502,21 @@ import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Home',
+  data() {
+    return {
+      domain: '',
+      domainsZones: []
+    }
+  },
+  methods: {
+    selectDomains() {
+      if (this.domain.length >= 1) {
+        this.$router.push({ name: 'DomainsRegister' })
+      } else if (this.domain.length <= 0) {
+        alert('ВНИМАНИЕ\nПожалуйста, введите хотя бы одно имя домена для проверки')
+      }
+    }
+  },
   components: {
     Header,
     Footer
@@ -610,6 +728,84 @@ export default {
   
   .valueImage {
     margin-left: 50px;
+  }
+
+  .domainsRegisterInfo {
+    display: flex;
+  }
+
+  .domainsRegisterInfoItem {
+    margin: 0px 15px;
+  }
+
+  .domainsRegisterInfoItemAction {
+    margin: 0px 5px;
+    cursor: pointer;
+    color: rgb(0, 150, 200);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  .domainsRegisterInfoItemHeader {
+    color: rgb(125, 125, 125);
+    font-weight: bolder;
+  }
+
+  .domainsRegisterHeader {
+    font-size: 28px;
+    font-weight: bolder;
+    color: rgb(75, 75, 75);
+  }
+
+  .domainsRegister {
+    margin: auto;
+  }
+
+  .domainsZones {
+    display: flex;
+  }
+
+  .domainZone {
+    margin: 0px 15px;
+  }
+
+  .domainZoneLabel {
+    font-weight: bolder;
+    font-size: 18px;
+    margin: 0px 7px;
+  }
+
+  .domainsActions {
+    display: flex;
+  }
+  
+  .domainsAction {
+    box-sizing: border-box;
+    padding-right: 75px;
+    height: 250px;
+    width: 25%;
+    margin: 0px 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .domainsActionHeader {
+    color: rgb(255, 0, 0);
+    font-weight: bolder;
+    font-size: 24px;
+    margin: 15px 0px;
+  }
+
+  .domainsActionContent {
+    color: rgb(50, 150, 150);
+    font-weight: bolder;
+    font-size: 18px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  .notLastDomainsAction {
+    border-right: 1px solid rgb(200, 200, 200);
   }
 
 </style>
