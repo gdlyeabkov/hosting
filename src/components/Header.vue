@@ -74,7 +74,7 @@ export default {
     name: 'Header',
     data() {
         return {
-            isAuth: true,
+            isAuth: false,
             isCookies: true,
             domain: ''
         }

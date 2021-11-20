@@ -145,15 +145,9 @@
                             <a class="btn btn-primary" style="background-color: #ac2bac;" href="#!" role="button">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a class="btn btn-primary" style="background-color: #00ccff;" href="#!" role="button">
-                                <i class="fab fa-telegram"></i>
-                            </a>
-                            <a class="btn btn-primary" style="background-color: #00ccff;" href="#!" role="button">
-                                <i class="fab fa-telegram"></i>
-                            </a>
-                            <a class="btn btn-primary" style="background-color: #00ccff;" href="#!" role="button">
-                                <i class="fab fa-telegram"></i>
-                            </a>
+                            <img width="40px" height="40px" src="https://www.reg.ru/dist/b-socialnets__link_icon_telegram.39bd25a9a2c28c3365ee2c320cc34ebb.svg" alt="" />
+                            <img width="40px" height="40px" src="https://www.reg.ru/dist/b-socialnets__link_icon_ok.f0e8d382caa9207d19425f751c1dc982.svg" alt="" />
+                            <img width="40px" height="40px" src="https://www.reg.ru/dist/b-socialnets__link_icon_moikrug.9f256a4403bdcbeb6e1ab3a5db95b0d0.svg" alt="" />
                         </div>
                     </div>
                     <span class="footerLinksItemContent">
