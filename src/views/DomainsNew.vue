@@ -139,7 +139,7 @@
           <img src="https://www.reg.ru/dist/b-new-domain-entrepreneur.bf58ab144d35d2794385e1915c5a9793.svg" alt="">
         </div>
         <div>
-          <span class="answers">
+          <span class="`answer`s">
             Ответы на частые вопросы    
           </span>
           <div class="answer">

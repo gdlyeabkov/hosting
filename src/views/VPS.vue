@@ -2,494 +2,231 @@
   <div class="">
     <Header :showBreadcrumbs="true" :breadcrumbsHeader="'VPS'" :breadcrumbsItems="['Всё']" />
     <div class="pageContent">
-      <div class="aboutService">
-        <span class="aboutServiceHeader">
-          Платформа для создания сайтов
+      <div class="development">
+        <div class="cloudServicesTop">
+          <span class="cloudServicesTopItem">
+            VPS > Облачные серверы
+          </span>
+          <div class="cloudServicesTopItem">
+            <span>
+              VPS на Linux
+            </span>
+            <img src="https://img.reg.ru/order-webpack/ds-icons__mc-ubuntu.f1fec04498b042edf7ef49fad3eb101e.svg" alt="" />
+            <span>
+              VPS на Windows
+            </span>
+            <img src="https://img.reg.ru/order-webpack/ds-icons__mc-windows.bbfe5b2994718cccddc32dc206376785.svg" alt="" />
+          </div>
+        </div>
+        <span class="developmentHeader">
+          Облачные сервисы для
         </span>
-        <span class="aboutServiceDesc">
-          Создайте сайт или блог, откройте интернет-магазин даже если вы этого не делали
+        <span class="developmentContent">
+          VPS c шаблонами приложений, снэпшотами и API.
         </span>
-        <span class="createSite">
-          Создать сайт
+        <span class="developmentContent">>
+          Почасовая оплата, первый платёж — 100 рублей.
         </span>
-      </div>
-      <div class="offers">
-        <div class="offer">
-          <span class="offerHeader">
-            Суперцена на .XYZ
+        <div clas="requestServer">
+          <button class="btn btn-success">
+            Заказать сервер
+          </button>
+          <span class="cloudServicePrice">
+            от 0.37 ₽/час
           </span>
-          <span class="offerDesc">
-            Теперь всего 85 рублей!
-          </span>
-          <span class="selectDomain">
-            Подключить
-          </span>
-        </div>
-        <div class="offer">
-          <span class="offerHeader">
-            Суперцена на .XYZ
-          </span>
-          <span class="offerDesc">
-            Теперь всего 85 рублей!
-          </span>
-          <span class="selectDomain">
-            Выбрать домен
-          </span>
-        </div>
-      </div>
-      <div class="domainsRegister">
-        <span class="domainsRegisterHeader">
-          Регистрация доменов
-        </span>
-        <div class="domainsRegisterInfo">
-          <span class="domainsRegisterInfoItem domainsRegisterInfoItemHeader">
-            3 300 000 доменов на обслуживании, № 1 в России
-          </span>
-          <div class="domainsRegisterInfoItem">
-            <span class="domainsRegisterInfoItemAction">
-              Продлить
-            </span>
-            <span class="domainsRegisterInfoItemAction">
-              Перенести в REG.RU
-            </span>
-            <span class="domainsRegisterInfoItemAction">
-              Регистрация списком
-            </span>
-          </div>
-        </div>
-        <div class="input-group inputRailwayDatePicker">
-          <input v-model="domain" type="text" placeholder="Введите домены или слово" class="form-control w-50" />
-          <span  class="input-group-text btn btn-success" id="basic-addon1" @click="selectDomains()" >Подобрать</span>
-        </div>
-        <div class="domainsZones">
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .RU
-            </label>
-          </div>
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .РФ
-            </label>
-          </div>
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .COM
-            </label>
-          </div>
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .РУС
-            </label>
-          </div>
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .MOSCOW
-            </label>
-          </div>
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .ORG
-            </label>
-          </div>
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .XYZ
-            </label>
-          </div>
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .SHOP
-            </label>
-          </div>
-          <div class="domainZone">
-            <label class="domainZoneLabel">
-              еще 742 зоны
-            </label>
-          </div>
-        </div>
-        <div class="domainsActions">
-          <div class="domainsAction notLastDomainsAction">
-            <span class="domainsActionHeader">
-              Скидки до 97%
-            </span>
-            <span class="domainsActionContent">
-              Актуальные акции
-            </span>
-          </div>
-          <div class="domainsAction notLastDomainsAction">
-            <span class="domainsActionHeader">
-              Бесплатно
-            </span>
-            <span class="domainsActionContent">
-              SSL-сертификат к домену и хостингу
-            </span>
-          </div>
-          <div class="domainsAction">
-            <span class="domainsActionHeader">
-              Подарок
-            </span>
-            <span class="domainsActionContent">
-              с каждым доменом
-            </span>
-          </div>
         </div>
       </div>
       <div>
+        <span class="apiHeader">
+          API для разработчиков
+        </span>  
+        <div class="api">
+          <div class="apiItem">
+            <span>
+              Любые действия, которые вы делаете с сервером в панели управления, можно сделать и через API: покупка, апгрейд, перезагрузка или остановка.
+            </span>
+            <span>
+              Встраивайте инфраструктуру REG.RU в свои сценарии: увеличивайте мощность сервера при повышении нагрузки и экономьте на развёртывании собственной инфраструктуры.
+            </span>
+            <span>
+              Описание API: developers.cloudvps.reg.ru
+            </span>
+            </div>
+          <div class="codeExample">
 
+          </div>
+        </div>
       </div>
-      <div>
-
-      </div>
-      <div class="carousel">
-
-      </div>
-      <div>
-
-      </div>
-      <div class="weAreSimple">
-        <span class="weAreSimpleHeader">
-          Почему мы? Это просто
+      <div class="cloudServices">
+        <span class="cloudServicesHeader">
+          Под капотом облачных серверов
         </span>
-        <div class="weAreSimpleContent">
-          <div class="weAreSimpleContainer">
-            <div class="weAreSimpleContentItem">
-              <span class="weAreSimpleContentItemHeader">
-                №1
-              </span>
-            </div>
+        <div class="cloudServicesRow">
+          <div class="cloudServicesRowItem">
+            <span class="cloudServicesRowItemHeader">
+              Операционные системы
+            </span>
             <span>
-              регистратор и хостинг - провайдер в России
+              Ubuntu, Debian, CentOS, Rocky Linux и Microsoft Windows
             </span>
           </div>
-          <div class="weAreSimpleContainer">
-            <div class="weAreSimpleContentItem">
-              <span class="weAreSimpleContentItemHeader">
-                39 млн
-              </span>
-            </div>
+          <div class="cloudServicesRowItem">
+            <span class="cloudServicesRowItemHeader">
+              Аппаратная виртуализация KVM
+            </span>
             <span>
-              оказанных услуг
+              Быстрая и надёжная виртуализация. Собственное ядро как в XEN — аналог реального физического сервера.              
             </span>
           </div>
-          <div class="weAreSimpleContainer">
-            <div class="weAreSimpleContentItem">
-              <span class="weAreSimpleContentItemHeader">
-                3.3
-              </span>
-            </div>
-            <span>
-              млн доменов на обслуживании
+          <div class="cloudServicesRowItem">
+            <span class="cloudServicesRowItemHeader">
+              Локальная дисковая система              
             </span>
-          </div>
-          <div class="weAreSimpleContainer">
-            <div class="weAreSimpleContentItem">
-              <span class="weAreSimpleContentItemHeader">
-                2.2
-              </span>
-            </div>
             <span>
-              млн более 2.2 млн клиентов
-            </span>
-          </div>
-          <div class="weAreSimpleContainer">
-            <div class="weAreSimpleContentItem">
-              <span class="weAreSimpleContentItemHeader">
-                24/7
-              </span>
-            </div>
-            <span>
-              профессиональная поддержка
+              Дисковая система на том же физическом сервере — быстрее, чем сетевое дисковое хранилище.              
             </span>
           </div>
         </div>
-      </div>
-      <div id="carouselExampleIndicators" class="ourClients carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+        <div class="cloudServicesRow">
+          <div class="cloudServicesRowItem">
+            <span class="cloudServicesRowItemHeader">
+              Защита от DDoS на уровнях L3/L4
+            </span>
+            <span>
+              Физические серверы защищены системой DDoS-Guard, способной отразить атаку до 1,5 Tbps на сетевых уровнях L3/L4.
+            </span>
+          </div>
+          <div class="cloudServicesRowItem">
+            <span class="cloudServicesRowItemHeader">
+              Приватные сети
+            </span>
+            <span>
+              Защищённое взаимодействие серверов внутри датацентра на скорости до 1 Гбит/с.              
+            </span>
+          </div>
+          <div class="cloudServicesRowItem">
+            <span class="cloudServicesRowItemHeader">
+              Дата-центр Курчатовский
+            </span>
+            <span>
+              Дата-центр в Москве — здесь размещены стойки корневого DNS-сервера F‑Root и реестров доменов RU и .РФ.
+            </span>
+          </div>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="ourClientsItem">
-              <span class="ourClientsItemHeader">
-                Наши клиенты
-              </span>
-              <div class="ourClientsList">
-                <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_mailru.svg" class="d-block w-100 ourClientsListItem" alt="mailru group" />
-                <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_groupib.svg" class="d-block w-100 ourClientsListItem" alt="group ib" />
-                <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_avito.svg" class="d-block w-100 ourClientsListItem" alt="avito" />
-                <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_vdud.svg" class="d-block w-100 ourClientsListItem" alt="влудь" />
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <span class="ourClientsItemHeader">
-              Наши клиенты
-            </span>
-            <div class="ourClientsList">
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_kasper.svg" class="d-block w-100 ourClientsListItem" alt="kaspersky" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_abbyy.svg" class="d-block w-100 ourClientsListItem" alt="abbyy" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_seven-airlines.svg" class="d-block w-100 ourClientsListItem" alt="s7 airlines" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_auchan.svg" class="d-block w-100 ourClientsListItem" alt="auchan retail" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <span class="ourClientsItemHeader">
-              Наши клиенты
-            </span>
-            <div class="ourClientsList">
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_alfabank.svg" class="d-block w-100 ourClientsListItem" alt="альфа банк" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_gpm.svg" class="d-block w-100 ourClientsListItem" alt="гом ртв" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_europeplus.svg" class="d-block w-100 ourClientsListItem" alt="европа плюс" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_mosgortelecom.svg" class="d-block w-100 ourClientsListItem" alt="мосгор телеком" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <span class="ourClientsItemHeader">
-              Наши клиенты
-            </span>
-            <div class="ourClientsList">
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_jooble.svg" class="d-block w-100 ourClientsListItem" alt="jooble" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_tilda.svg" class="d-block w-100 ourClientsListItem" alt="tilda publishing" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_invitro.svg" class="d-block w-100 ourClientsListItem" alt="инвитро" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_friday.svg" class="d-block w-100 ourClientsListItem" alt="Пятница" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <span class="ourClientsItemHeader">
-              Наши клиенты
-            </span>
-            <div class="ourClientsList">
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_first-bit.svg" class="d-block w-100 ourClientsListItem" alt="первый бит" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_bankiru.svg" class="d-block w-100 ourClientsListItem" alt="банки ру" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_sovcombank.svg" class="d-block w-100 ourClientsListItem" alt="совком банк" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_rabotaru.svg" class="d-block w-100 ourClientsListItem" alt="работа ру" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <span class="ourClientsItemHeader">
-              Наши клиенты
-            </span>
-            <div class="ourClientsList">
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_uesp.svg" class="d-block w-100 ourClientsListItem" alt="единная электронная торговая площадка" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_regnum.svg" class="d-block w-100 ourClientsListItem" alt="regnum" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_iledebeaute.svg" class="d-block w-100 ourClientsListItem" alt="иль дэ боте" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_ivideon.svg" class="d-block w-100 ourClientsListItem" alt="ivideon" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <span class="ourClientsItemHeader">
-              Наши клиенты
-            </span>
-            <div class="ourClientsList">
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_apteka.svg" class="d-block w-100 ourClientsListItem" alt="аптека ру" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_avto.svg" class="d-block w-100 ourClientsListItem" alt="авто спец центр" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_kupikupon.svg" class="d-block w-100 ourClientsListItem" alt="купи купон для себя и друзей" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_biglion.svg" class="d-block w-100 ourClientsListItem" alt="biglion" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <span class="ourClientsItemHeader">
-              Наши клиенты
-            </span>
-            <div class="ourClientsList">
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_pravo.svg" class="d-block w-100 ourClientsListItem" alt="право ру" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_lenkom.svg" class="d-block w-100 ourClientsListItem" alt="ленком" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_donstroi.svg" class="d-block w-100 ourClientsListItem" alt="донстрой" />
-              <img src="https://www.reg.ru/i/company/clients/b-clients__image_type_e-moskva.svg" class="d-block w-100 ourClientsListItem" alt="электронная москва" />
-            </div>
-          </div>
-          
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+        <button class="btn btn-success">
+          Заказать сервер
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-      <div id="carouselExampleIndicators" class="ourComments carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="ourCommentContainer">
-              <div class="ourCommentContainerItem">
-                <span class="ourCommentContainerItemHeader">
-                  Отзывы клиентов
-                </span>
-                <span>
-                  Мой сайт на этом хостинге уже третий год, у них же регистрировал доменное имя. Полностью доволен, нареканий нет, надежный и быстрый, ни разу не было такого, что сайт недоступен или тормозит. Масса полезных связанных сервисов. Наверное единственный незначительный минус - цена, она не такая низкая, как у других хостеров, однако для меня всегда лучше заплатить чуть больше, но быть уверенным в том, что никаких проблем не возникнет. Если резюмировать, то это взрослый, состоявшийся хостинг для взрослых, серьезных людей.
-                </span>
-              </div>
-              <img src="https://www.reg.ru/dist/b-icon_feedback_man.ebe7f49e5c1007d9be7c2268da42b44e.svg" alt="" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="ourCommentContainer">
-              <div class="ourCommentContainerItem">
-                <span class="ourCommentContainerItemHeader">
-                  Отзывы клиентов
-                </span>
-                <span>
-                  Доброго дня! Меня зовут Виталий, я веб-мастер. Стаж работы 6 лет. У меня около 30 активных сайтов на разных хостингах. REG.RU самый лучший из всех, которые я знаю. По всем показателям. Это проверено временем. Поэтому все новые проекты я делаю уже тут. А также участвую в партнёрской программе. От души благодарю всю команду за вашу замечательную, компетентную и достойную работу!
-                </span>
-                <span>
-                  Виталий на http://ru.hostings.info/reg-ru.html
-                </span>
-              </div>
-              <img src="https://www.reg.ru/dist/b-icon_feedback_man.ebe7f49e5c1007d9be7c2268da42b44e.svg" alt="" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="ourCommentContainer">
-              <div class="ourCommentContainerItem">
-                <span class="ourCommentContainerItemHeader">
-                  Отзывы клиентов
-                </span>
-                <span>
-                  Нравится в Reg.Ru, что действительно есть из чего выбрать – хостинг действительно гибкий в плане требований пользователя. Самые разные варианты тарифных планов по разным ценам. Плюс гарантированный возврат оплаты по требованию – неплохое впечатление. Посмотрим, как дальше покажет себя в плане надежности, но пока вроде все хорошо, а если там раз в полгода обвалится, так и на солнце есть пятна.
-                </span>
-                <span>
-                  Владимир на https://hosters.ru/
-                </span>
-              </div>
-              <img src="https://www.reg.ru/dist/b-icon_feedback_man.ebe7f49e5c1007d9be7c2268da42b44e.svg" alt="" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="ourCommentContainer">
-              <div class="ourCommentContainerItem">
-                <span class="ourCommentContainerItemHeader">
-                  Отзывы клиентов
-                </span>
-                <span>
-                  Нравится в Reg.Ru, что действительно есть из чего выбрать – хостинг действительно гибкий в плане требований пользователя. Самые разные варианты тарифных планов по разным ценам. Плюс гарантированный возврат оплаты по требованию – неплохое впечатление. Посмотрим, как дальше покажет себя в плане надежности, но пока вроде все хорошо, а если там раз в полгода обвалится, так и на солнце есть пятна.
-                </span>
-                <span>
-                  Владимир на https://hosters.ru/
-                </span>
-              </div>
-              <img src="https://www.reg.ru/dist/b-icon_feedback_man.ebe7f49e5c1007d9be7c2268da42b44e.svg" alt="" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="ourCommentContainer">
-              <div class="ourCommentContainerItem">
-                <span class="ourCommentContainerItemHeader">
-                  Отзывы клиентов
-                </span>
-                <span>
-                  Нравится в Reg.Ru, что действительно есть из чего выбрать – хостинг действительно гибкий в плане требований пользователя. Самые разные варианты тарифных планов по разным ценам. Плюс гарантированный возврат оплаты по требованию – неплохое впечатление. Посмотрим, как дальше покажет себя в плане надежности, но пока вроде все хорошо, а если там раз в полгода обвалится, так и на солнце есть пятна.
-                </span>
-                <span>
-                  Владимир на https://hosters.ru/
-                </span>
-              </div>
-              <img src="https://www.reg.ru/dist/b-icon_feedback_man.ebe7f49e5c1007d9be7c2268da42b44e.svg" alt="" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="ourCommentContainer">
-              <div class="ourCommentContainerItem">
-                <span class="ourCommentContainerItemHeader">
-                  Отзывы клиентов
-                </span>
-                <span>
-                  Нравится в Reg.Ru, что действительно есть из чего выбрать – хостинг действительно гибкий в плане требований пользователя. Самые разные варианты тарифных планов по разным ценам. Плюс гарантированный возврат оплаты по требованию – неплохое впечатление. Посмотрим, как дальше покажет себя в плане надежности, но пока вроде все хорошо, а если там раз в полгода обвалится, так и на солнце есть пятна.
-                </span>
-                <span>
-                  Владимир на https://hosters.ru/
-                </span>
-              </div>
-              <img src="https://www.reg.ru/dist/b-icon_feedback_man.ebe7f49e5c1007d9be7c2268da42b44e.svg" alt="" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="ourCommentContainer">
-              <div class="ourCommentContainerItem">
-                <span class="ourCommentContainerItemHeader">
-                  Отзывы клиентов
-                </span>
-                <span>
-                  Нравится в Reg.Ru, что действительно есть из чего выбрать – хостинг действительно гибкий в плане требований пользователя. Самые разные варианты тарифных планов по разным ценам. Плюс гарантированный возврат оплаты по требованию – неплохое впечатление. Посмотрим, как дальше покажет себя в плане надежности, но пока вроде все хорошо, а если там раз в полгода обвалится, так и на солнце есть пятна.
-                </span>
-                <span>
-                  Владимир на https://hosters.ru/
-                </span>
-              </div>
-              <img src="https://www.reg.ru/dist/b-icon_feedback_man.ebe7f49e5c1007d9be7c2268da42b44e.svg" alt="" />
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-      <div class="value">
-        <div class="valueItemContainer">
-          <span class="valueItemContainerHeader">
-            Ваша оценка
-          </span>
-          <span>
-            Мы внимательно следим за вашими оценками и отзывами о работе службы поддержки
-          </span>
-        </div>
-        <img class="valueImage" src="https://www.reg.ru/dist/b-icon_smile_good.be938599be41196164d8be7d0ca0a0e3.svg" alt="">
-        <div class="valueItemContainer">
-          <span class="valueItemContainerHeader">
-            33 580
-          </span>
-          <span>
-            клиентов выразили
-            благодарность
-          </span>
-        </div>
-        <img src="https://www.reg.ru/dist/b-icon_smile_bad.97923b12d6010f1b80a4a529d01be172.svg" class="valueImage" alt="">
-        <div class="valueItemContainer">
-          <span class="valueItemContainerHeader">
-            1 623
-          </span>
-          <span>
-            клиента подсказали,
-            как нам стать лучше
-          </span>
-        </div>
-      </div>
-      <div class="thanks">
-        <span>
-          Спасибо, что выбрали REG.RU!
+      </div>     
+      <div>
+        <span class="answersHeader">
+          Остались вопросы?
         </span>
+        <div class="answer">
+          <span>
+            Как работает почасовая оплата?
+          </span>
+          <span class="material-icons answerToggler">
+            expand_more
+          </span>
+        </div>
+        <div class="answer">
+          <span>
+            Почему тарифы за месяц указаны в формате «до X рублей в месяц»?
+          </span>
+          <span class="material-icons answerToggler">
+            expand_more
+          </span>
+        </div>
+        <div class="answer">
+          <span>
+            Можно ли создать сервер не на месяц, а на несколько дней? Сколько это будет стоить?
+          </span>
+          <span class="material-icons answerToggler">
+            expand_more
+          </span>
+        </div>
+        <div class="answer">
+          <span>
+            Взимается ли плата, если не использовать сервер?
+          </span>
+          <span class="material-icons answerToggler">
+            expand_more
+          </span>
+        </div>
+        <div class="answer">
+          <span>
+            Можно ли будет изменить тариф для работающего сервера?
+          </span>
+          <span class="material-icons answerToggler">
+            expand_more
+          </span>
+        </div>
+        <div class="answer">
+          <span>
+            Чем виртуализация KVM отличается от XEN?
+          </span>
+          <span class="material-icons answerToggler">
+            expand_more
+          </span>
+        </div>
+        <div class="answer">
+          <span>
+            Есть ли поддержка ISO-образов?
+          </span>
+          <span class="material-icons answerToggler">
+            expand_more
+          </span>
+        </div>
+        <div class="answer">
+          <span>
+            Чем отличаются линейки тарифов?
+          </span>
+          <span class="material-icons answerToggler">
+            expand_more
+          </span>
+        </div>
+        <div class="answer">
+          <span>
+            Есть ли ограничение по трафику?
+          </span>
+          <span class="material-icons answerToggler">
+            expand_more
+          </span>
+        </div>
+        <div class="answer">
+          <span>
+            Предоставляется ли панель управления сервером?
+          </span>
+          <span class="material-icons answerToggler">
+            expand_more
+          </span>
+        </div>
+        <div class="answer">
+          <span>
+            Можно ли заказать сервер с Windows или FreeBSD?            
+          </span>
+          <span class="material-icons answerToggler">
+            expand_more
+          </span>
+        </div>
+        <div class="answer">
+          <span>
+            Как работает резервное копирование?
+          </span>
+          <span class="material-icons answerToggler">
+            expand_more
+          </span>
+        </div>
+        <div class="answer">
+          <span>
+            Есть ли ограничения на количество создаваемых серверов?
+          </span>
+          <span class="material-icons answerToggler">
+            expand_more
+          </span>
+        </div>
       </div>
+
     </div>
     <Footer />
   </div>
@@ -806,6 +543,144 @@ export default {
 
   .notLastDomainsAction {
     border-right: 1px solid rgb(200, 200, 200);
+  }
+
+  .answers {
+    color: rgb(75, 75, 75);
+    font-size: 36px;
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  .answer {
+    border-top: 1px solid rgb(175, 175, 175);
+    border-bottom: 1px solid rgb(175, 175, 175);
+    color: rgb(75, 75, 75);
+    font-size: 18px;
+    text-align: center;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-between;
+    height: 125px;
+    box-sizing: border-box;
+    padding: 15px 0px;
+  }
+
+  .answerToggler {
+    font-weight: bolder;
+  }
+
+  .answersHeader {
+    font-size: 36px;
+    font-weight: bolder;
+  }
+
+  .api {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .codeExample {
+    background-color: rgb(50, 50, 150);
+    border-radius: 8px;
+    width: 350px;
+    height: 350px
+  }
+
+  .apiItem {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0px 50px;
+  }
+
+  .apiHeader {
+    display: block;
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: center;
+    margin: 50px 0px;
+  }
+
+  .cloudServices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+  }
+
+  .cloudServicesHeader {
+    font-size: 24px;
+    font-weight: bolder;
+  }
+
+  .cloudServicesRow {
+    display: flex;
+  }
+
+  .cloudServicesRowItem {
+    background-color: rgb(255, 255, 255);
+    width: 250px;
+    height: 250px;
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+  }
+
+  .cloudServicesRowItemHeader {
+    font-weight: bolder;
+    margin: 15px 0px;
+  }
+
+  .development {
+    width: 100%;
+    height: 550px;
+    background-image: url('https://www.reg.ru/dist/b-cloudvps__header.c1df0fc445eda810e8078b722f1a48a5.png');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .developmentHeader {
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-size: 36px;
+  }
+
+  .developmentContent {
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    margin: 15px 0px;
+  }
+
+  .requestServer {
+    display: flex;
+  }
+
+  .cloudServicePrice {
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-size: 24px;
+  }
+
+  .cloudServicesTop {
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px 75px;
+  }
+
+  .cloudServicesTopItem {
+    margin: 0px 175px;
+  }
+
+  .cloudServicesTopSubitem {
+    display: flex;
   }
 
 </style>
