@@ -2,213 +2,519 @@
   <div class="">
     <Header :showBreadcrumbs="true" :breadcrumbsHeader="'Хостинг'" :breadcrumbsItems="['Хостинг сайтов', 'Обзор VPS', 'Хостинг для 1C-Битрикс', 'Аренда серверов', 'Всё']" />
     <div class="pageContent">
-      <div class="aboutService">
-        <span class="aboutServiceHeader">
-          Платформа для создания сайтов
+      <div class="hosting">
+        <div class="hostingItem">
+          <span class="hostingItemSubheader">
+            Web-хостинг для сайта
+          </span>
+          <span class="hostingItemHeader">
+            Доверьте заботу о сайте хостинг‑провайдеру №1 в России
+          </span>
+          <span>
+            по данным StatOnline.ru, занимает первое место по количеству обслуживаемых на хостинге<br/>доменов в национальных зонах .RU и .РФ
+          </span>
+        </div>
+        <img src="https://www.reg.ru/dist/b-hosting__header-icon.74267074b5b8d132193cd67d971efe1b.svg" alt="" />
+      </div>
+      <div class="tariffs">
+        <div class="tariffsHeader">
+          <div class="tariffsHeaderLeft">
+            <span class="tariffsHeaderLeftHeader">
+              Эконом
+            </span>
+            <span class="tariffsHeaderLeftHeader">
+              Скоростные
+            </span>
+            <span class="tariffsHeaderLeftHeader">
+              +Мощность
+            </span>
+          </div>
+          <div class="tariffsHeaderRight">
+            <span class="tariffsHeaderLeftSubheader">
+              Для ASP.NET
+            </span>
+            <span class="tariffsHeaderLeftSubheader">
+              Для 1С-Битрикс
+            </span>
+          </div>
+        </div>
+        <div class="tariffsBody">
+          <div class="tariffsList">
+            <div class="tariff">
+              <span class="tariffName">
+                Host-0
+              </span>
+              <span class="tariffDesc">
+                Удобен для персональной страницы
+              </span>
+              <span class="tariffSize">
+                13ГБ SSD
+              </span>
+              <span class="tariffSites">
+                7 сайтов
+              </span>
+              <span class="tariffLimit">
+                БД, псевдонимы и трафик<br/>без ограничений
+              </span>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  Поддержка PHP, MySQL, Perl, Python и популярных CMS
+                </span>
+              </div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  SSL-сертификат бесплатно
+                </span>
+              </div>
+              <span class="tariffPrice">
+                от 
+                <span class="tariffMainPrice">
+                  141 ₽
+                </span>
+                / мес
+              </span>
+              <button class="btn btn-success">
+                Выбрать
+              </button>
+            </div>
+            <div class="tariff">
+              <span class="tariffName">
+                Host-0
+              </span>
+              <span class="tariffDesc">
+                Удобен для персональной страницы
+              </span>
+              <span class="tariffSize">
+                13ГБ SSD
+              </span>
+              <span class="tariffSites">
+                7 сайтов
+              </span>
+              <span class="tariffLimit">
+                БД, псевдонимы и трафик<br/>без ограничений
+              </span>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  Поддержка PHP, MySQL, Perl, Python и популярных CMS
+                </span>
+              </div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  SSL-сертификат бесплатно
+                </span>
+              </div>
+              <span class="tariffPrice">
+                от 
+                <span class="tariffMainPrice">
+                  141 ₽
+                </span>
+                / мес
+              </span>
+              <button class="btn btn-success">
+                Выбрать
+              </button>
+            </div>
+            <div class="tariff">
+              <span class="tariffName">
+                Host-0
+              </span>
+              <span class="tariffDesc">
+                Удобен для персональной страницы
+              </span>
+              <span class="tariffSize">
+                13ГБ SSD
+              </span>
+              <span class="tariffSites">
+                7 сайтов
+              </span>
+              <span class="tariffLimit">
+                БД, псевдонимы и трафик<br/>без ограничений
+              </span>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  Поддержка PHP, MySQL, Perl, Python и популярных CMS
+                </span>
+              </div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  SSL-сертификат бесплатно
+                </span>
+              </div>
+              <span class="tariffPrice">
+                от 
+                <span class="tariffMainPrice">
+                  141 ₽
+                </span>
+                / мес
+              </span>
+              <button class="btn btn-success">
+                Выбрать
+              </button>
+            </div>
+            <div class="tariff">
+              <span class="tariffName">
+                Host-0
+              </span>
+              <span class="tariffDesc">
+                Удобен для персональной страницы
+              </span>
+              <span class="tariffSize">
+                13ГБ SSD
+              </span>
+              <span class="tariffSites">
+                7 сайтов
+              </span>
+              <span class="tariffLimit">
+                БД, псевдонимы и трафик<br/>без ограничений
+              </span>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  Поддержка PHP, MySQL, Perl, Python и популярных CMS
+                </span>
+              </div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  SSL-сертификат бесплатно
+                </span>
+              </div>
+              <span class="tariffPrice">
+                от 
+                <span class="tariffMainPrice">
+                  141 ₽
+                </span>
+                / мес
+              </span>
+              <button class="btn btn-success">
+                Выбрать
+              </button>
+            </div>
+          </div>
+        </div>
+        <span class="fullList">
+          Полный список особенностей и сравнение тарифов
         </span>
-        <span class="aboutServiceDesc">
-          Создайте сайт или блог, откройте интернет-магазин даже если вы этого не делали
-        </span>
-        <span class="createSite">
-          Создать сайт
-        </span>
       </div>
-      <div class="offers">
-        <div class="offer">
-          <span class="offerHeader">
-            Суперцена на .XYZ
+      <div class="withoutProgramming">
+        <div class="withoutProgrammingItem">
+          <span class="withoutProgrammingItemHeader">
+            Сайт без программирования<br/>с помощью REG.Site от REG.RU
           </span>
-          <span class="offerDesc">
-            Теперь всего 85 рублей!
-          </span>
-          <span class="selectDomain">
-            Подключить
-          </span>
-        </div>
-        <div class="offer">
-          <span class="offerHeader">
-            Суперцена на .XYZ
-          </span>
-          <span class="offerDesc">
-            Теперь всего 85 рублей!
-          </span>
-          <span class="selectDomain">
-            Выбрать домен
-          </span>
+          <img src="https://www.reg.ru/dist/b-price-guarantee.dfdf52d7904a218a0d25a21fb5ec37cc.svg" alt="" width="45px" height="45px" />
         </div>
       </div>
-      <div class="domainsRegister">
-        <span class="domainsRegisterHeader">
-          Регистрация доменов
-        </span>
-        <div class="domainsRegisterInfo">
-          <span class="domainsRegisterInfoItem domainsRegisterInfoItemHeader">
-            3 300 000 доменов на обслуживании, № 1 в России
+      <div class="withoutProgramming">
+        <div class="withoutProgrammingItem">
+          <span class="withoutProgrammingItemHeader">
+            Тест-драйв хостинга — 14 дней бесплатно!
           </span>
-          <div class="domainsRegisterInfoItem">
-            <span class="domainsRegisterInfoItemAction">
-              Продлить
+          <img src="https://www.reg.ru/dist/b-price-guarantee.dfdf52d7904a218a0d25a21fb5ec37cc.svg" alt="" width="45px" height="45px" />
+        </div>
+      </div>
+      <div class="benefitsList">
+        <div class="benefitsLeft">
+          <div class="benefitContainer">
+            <img src="https://www.reg.ru/dist/b-icon_hosting_ddos.bf4b9790f2909e664f5f8f103d4aebcf.svg" alt="" />
+            <span>
+              Автоматическая защита от DDoS-атак на всех тарифах
             </span>
-            <span class="domainsRegisterInfoItemAction">
-              Перенести в REG.RU
+          </div>
+          <div class="benefitContainer">
+            <img src="https://www.reg.ru/dist/b-icon_hosting_virusdie.1d3f984da3d3f318fad2222f48396c9d.svg" alt="" />
+            <span>
+              Двойная антивирусная проверка и автоматическое лечение вирусов на всех тарифах
             </span>
-            <span class="domainsRegisterInfoItemAction">
-              Регистрация списком
+          </div>
+          <div class="benefitContainer">
+            <img src="https://www.reg.ru/dist/b-icon_hosting_moneyback-button.4250842d08d61cb46e86a2babb9753aa.svg" alt="" />
+            <span>
+              Гарантия возврата средств за неиспользованный период — полное тестирование
             </span>
           </div>
         </div>
-        <div class="input-group inputRailwayDatePicker">
-          <input v-model="domain" type="text" placeholder="Введите домены или слово" class="form-control w-50" />
-          <span  class="input-group-text btn btn-success" id="basic-addon1" @click="selectDomains()" >Подобрать</span>
-        </div>
-        <div class="domainsZones">
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .RU
-            </label>
-          </div>
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .РФ
-            </label>
-          </div>
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .COM
-            </label>
-          </div>
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .РУС
-            </label>
-          </div>
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .MOSCOW
-            </label>
-          </div>
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .ORG
-            </label>
-          </div>
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .XYZ
-            </label>
-          </div>
-          <div class="domainZone">
-            <input type="checkbox" v-model="domainsZones" />
-            <label class="domainZoneLabel">
-              .SHOP
-            </label>
-          </div>
-          <div class="domainZone">
-            <label class="domainZoneLabel">
-              еще 742 зоны
-            </label>
-          </div>
-        </div>
-        <div class="domainsActions">
-          <div class="domainsAction notLastDomainsAction">
-            <span class="domainsActionHeader">
-              Скидки до 97%
-            </span>
-            <span class="domainsActionContent">
-              Актуальные акции
+        <div class="benefitsLeft">
+          <div class="benefitContainer">
+            <img src="https://www.reg.ru/dist/b-price-guarantee.dfdf52d7904a218a0d25a21fb5ec37cc.svg" alt="" width="45px" height="45px" />
+            <span>
+              Гарантия лучшего соотношения цены к производительности
             </span>
           </div>
-          <div class="domainsAction notLastDomainsAction">
-            <span class="domainsActionHeader">
-              Бесплатно
-            </span>
-            <span class="domainsActionContent">
-              SSL-сертификат к домену и хостингу
-            </span>
-          </div>
-          <div class="domainsAction">
-            <span class="domainsActionHeader">
-              Подарок
-            </span>
-            <span class="domainsActionContent">
-              с каждым доменом
+          <div class="benefitContainer">
+            <img src="https://www.reg.ru/dist/b-icon_hosting_bonus-button.4c38f693d84172e8e5fd30394daac195.svg" alt="" />
+            <span class="benefitText">
+              Бесплатный перенос от других провайдеров<br/>на другой тариф, а также бонусы за перенос
             </span>
           </div>
         </div>
       </div>
-      <div>
-
-      </div>
-      <div>
-
-      </div>
-      <div class="carousel">
-
-      </div>
-      <div>
-
-      </div>
-      <div class="weAreSimple">
-        <span class="weAreSimpleHeader">
-          Почему мы? Это просто
-        </span>
-        <div class="weAreSimpleContent">
-          <div class="weAreSimpleContainer">
-            <div class="weAreSimpleContentItem">
-              <span class="weAreSimpleContentItemHeader">
-                №1
+      <div class="vps">
+        <div class="vpsContainer">
+          <span class="vpsContainerHeader">
+            Бесплатно на всех планах виртуального хостинга:
+          </span>
+          <div class="vpsContainerItem">
+            <div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  Защита от DDoS-атак
+                </span>
+              </div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  Высокопроизводительный SSD RAID                 
+                </span>
+              </div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  DNS
+                </span>
+              </div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  Хранение 30 резервных копий                  
+                </span>
+              </div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  ОС: CentOS
+                </span>
+              </div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  ISPmanager, cPanel, Plesk
+                </span>
+              </div>
+            </div>
+            <div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  PHP 5.1–8, Perl 5.10, Python 2.6-3.7 
+                </span>
+              </div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  ∞ БД, MySQL 5.7
+                </span>
+              </div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  Безлимитный трафик                  
+                </span>
+              </div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  Доступ по протоколу FTP/SSH 
+                </span>
+              </div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  Двойная антивирусная проверка
+                </span>
+              </div>
+              <div>
+                <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+                <span>
+                  Почта для доменов, ∞ ящик
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vpsContainer">
+          <span class="vpsContainerHeader">
+            Дополнительные услуги для web-hosting:
+          </span>
+          <div>
+            <div>
+              <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+              <span>
+                Лечение заражённых файлов
               </span>
             </div>
-            <span>
-              регистратор и хостинг - провайдер в России
-            </span>
-          </div>
-          <div class="weAreSimpleContainer">
-            <div class="weAreSimpleContentItem">
-              <span class="weAreSimpleContentItemHeader">
-                39 млн
+            <div>
+              <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+              <span>
+                Расширенная защита от спама
               </span>
             </div>
-            <span>
-              оказанных услуг
-            </span>
-          </div>
-          <div class="weAreSimpleContainer">
-            <div class="weAreSimpleContentItem">
-              <span class="weAreSimpleContentItemHeader">
-                3.3
+            <div>
+              <img src="https://www.reg.ru/dist/b-icon_style_done-medium.dcb8fe168aecbb9c4958cf68221daa9f.svg" alt="" />
+              <span>
+                Дополнительные адреса IPv4 
               </span>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="freeSslCert">
+        <div class="freeSslCertItem">
+          <span class="freeSslCertItemHeader">
+            Бесплатный SSL-сертификат<br/>для защиты данных и доверия пользователей
+          </span>
+          <span>
+            REG.RU предоставляет бесплатный SSL-сертификат для всех тарифов, начиная с Host-A,
+            чтобы обеспечить своим клиентам надёжную защиту и доверие со стороны пользователей.
+          </span>
+        </div>
+        <img src="https://www.reg.ru/dist/b-icon_hosting_bonus-button.4c38f693d84172e8e5fd30394daac195.svg" alt="" />
+      </div>
+      <div class="supportCMS">
+        <span class="supportCMSHeader">
+          Поддержка популярных CMS для создания сайтов
+        </span>
+        <div class="cmsList">
+          <div class="cms">
+            <img src="https://www.reg.ru/dist/b-list-expander__item-title-icon.f263fff9d79c0f91fdc32b7d050f4ed2.svg" alt="worpress" width="45px" height="45px" />
             <span>
-              млн доменов на обслуживании
+              worpress
             </span>
           </div>
-          <div class="weAreSimpleContainer">
-            <div class="weAreSimpleContentItem">
-              <span class="weAreSimpleContentItemHeader">
-                2.2
-              </span>
-            </div>
+          <div class="cms">
+            <img src="https://www.reg.ru/dist/b-list-expander__item-title-icon.f263fff9d79c0f91fdc32b7d050f4ed2.svg" alt="Joomla" width="45px" height="45px" />
             <span>
-              млн более 2.2 млн клиентов
+              Joomla
             </span>
           </div>
-          <div class="weAreSimpleContainer">
-            <div class="weAreSimpleContentItem">
-              <span class="weAreSimpleContentItemHeader">
-                24/7
+          <div class="cms">
+            <img src="https://www.reg.ru/dist/b-list-expander__item-title-icon.f263fff9d79c0f91fdc32b7d050f4ed2.svg" alt="HostCMS" width="45px" height="45px" />
+            <span>
+              HostCMS
+            </span>
+          </div>
+          <div class="cms">
+            <img src="https://www.reg.ru/dist/b-list-expander__item-title-icon.f263fff9d79c0f91fdc32b7d050f4ed2.svg" alt="UMI.CMS" width="45px" height="45px" />
+            <span>
+              UMI.CMS
+            </span>
+          </div>
+          <div class="cms">
+            <img src="https://www.reg.ru/dist/b-list-expander__item-title-icon.f263fff9d79c0f91fdc32b7d050f4ed2.svg" alt="Drupal" width="45px" height="45px" />
+            <span>
+              Drupal
+            </span>
+          </div>
+          <div class="cms">
+            <img src="https://www.reg.ru/dist/b-list-expander__item-title-icon.f263fff9d79c0f91fdc32b7d050f4ed2.svg" alt="NetCat" width="45px" height="45px" />
+            <span>
+              NetCat
+            </span>
+          </div>
+          <div class="cms">
+            <img src="https://www.reg.ru/dist/b-list-expander__item-title-icon.f263fff9d79c0f91fdc32b7d050f4ed2.svg" alt="ABO.CMS" width="45px" height="45px" />
+            <span>
+              ABO.CMS
+            </span>
+          </div>
+          <div class="cms">
+            <img src="https://www.reg.ru/dist/b-list-expander__item-title-icon.f263fff9d79c0f91fdc32b7d050f4ed2.svg" alt="1С-Битрикс" width="45px" height="45px" />
+            <span>
+              1С-Битрикс
+            </span>
+          </div>
+          <span class="fullList">
+            Полный список
+          </span>
+        </div>
+      </div>
+      <div class="hopeAndSpeed">
+        <img src="https://www.reg.ru/dist/b-hosting-chosen-counter__icon.288c4f500e3c40a988f40293ffc647bb.svg" alt="" />
+        <div class="hopeAndSpeedItem">
+          <span class="hopeAndSpeedItemHeader">
+            Тысячи компаний выбрали REG.RU за надежность и быстроту
+          </span>
+          <span>
+            Отзывы клиентов на независимом рейтинге надёжных провайдеров в России ХостОбзор.ру. Ознакомиться с отзывами.
+          </span>
+          <span class="hopeAndSpeedItemHeader">
+            Вам нужна помощь с выбором тарифа?
+          </span>
+          <span>
+            Пишите в help-чат или службу поддержки.
+          </span>
+        </div>
+      </div>
+      <div class="benefits">
+        <span class="benefitsHeader">
+          Преимущества услуг shared hosting от компании REG.RU
+        </span>
+        <div class="benefitsItems">
+          <div class="benefitsItem">
+            <div class="benefit">
+              <img src="data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220.959%22%20height%3D%2218.766%22%20viewBox%3D%22-1113.375%20236.739%2020.959%2018.766%22%20enable-background%3D%22new%20-1113.375%20236.739%2020.959%2018.766%22%3E%3Cpath%20fill%3D%22%2300C084%22%20d%3D%22M-1093.11%20237.045c-.744-.529-1.776-.353-2.303.389l-9.471%2013.566-5.517-7.546c-.544-.73-1.582-.881-2.311-.335-.729.545-.879%201.582-.333%202.313l6.877%209.412c.546.729%201.581.876%202.311.33.195-.144.345-.322.454-.523l10.682-15.303c.53-.743.353-1.774-.389-2.303z%22%2F%3E%3C%2Fsvg%3E" alt="" width="25px" height="25px" />
+              <span class="benefitHeader">
+                Выгодные условия, отсутствие скрытых платежей
               </span>
             </div>
-            <span>
-              профессиональная поддержка
-            </span>
+            <div class="benefit">
+              <img src="data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220.959%22%20height%3D%2218.766%22%20viewBox%3D%22-1113.375%20236.739%2020.959%2018.766%22%20enable-background%3D%22new%20-1113.375%20236.739%2020.959%2018.766%22%3E%3Cpath%20fill%3D%22%2300C084%22%20d%3D%22M-1093.11%20237.045c-.744-.529-1.776-.353-2.303.389l-9.471%2013.566-5.517-7.546c-.544-.73-1.582-.881-2.311-.335-.729.545-.879%201.582-.333%202.313l6.877%209.412c.546.729%201.581.876%202.311.33.195-.144.345-.322.454-.523l10.682-15.303c.53-.743.353-1.774-.389-2.303z%22%2F%3E%3C%2Fsvg%3E" alt="" width="25px" height="25px" />
+              <span class="benefitHeader">
+                Техническая поддержка через тикет-систему 24/7/365
+              </span>
+            </div>
+            <div class="benefit">
+              <img src="data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220.959%22%20height%3D%2218.766%22%20viewBox%3D%22-1113.375%20236.739%2020.959%2018.766%22%20enable-background%3D%22new%20-1113.375%20236.739%2020.959%2018.766%22%3E%3Cpath%20fill%3D%22%2300C084%22%20d%3D%22M-1093.11%20237.045c-.744-.529-1.776-.353-2.303.389l-9.471%2013.566-5.517-7.546c-.544-.73-1.582-.881-2.311-.335-.729.545-.879%201.582-.333%202.313l6.877%209.412c.546.729%201.581.876%202.311.33.195-.144.345-.322.454-.523l10.682-15.303c.53-.743.353-1.774-.389-2.303z%22%2F%3E%3C%2Fsvg%3E" alt="" width="25px" height="25px" />
+              <span class="benefitHeader">
+                Единый центр управления услугами
+              </span>
+            </div>
+          </div>
+          <div class="benefitsItem">
+            <div class="benefit">
+              <img src="data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220.959%22%20height%3D%2218.766%22%20viewBox%3D%22-1113.375%20236.739%2020.959%2018.766%22%20enable-background%3D%22new%20-1113.375%20236.739%2020.959%2018.766%22%3E%3Cpath%20fill%3D%22%2300C084%22%20d%3D%22M-1093.11%20237.045c-.744-.529-1.776-.353-2.303.389l-9.471%2013.566-5.517-7.546c-.544-.73-1.582-.881-2.311-.335-.729.545-.879%201.582-.333%202.313l6.877%209.412c.546.729%201.581.876%202.311.33.195-.144.345-.322.454-.523l10.682-15.303c.53-.743.353-1.774-.389-2.303z%22%2F%3E%3C%2Fsvg%3E" alt="" width="25px" height="25px" />
+              <span class="benefitHeader">
+                Гарантия предоставления заявленных ресурсов
+              </span>
+            </div>
+            <div class="benefit">
+              <img src="data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220.959%22%20height%3D%2218.766%22%20viewBox%3D%22-1113.375%20236.739%2020.959%2018.766%22%20enable-background%3D%22new%20-1113.375%20236.739%2020.959%2018.766%22%3E%3Cpath%20fill%3D%22%2300C084%22%20d%3D%22M-1093.11%20237.045c-.744-.529-1.776-.353-2.303.389l-9.471%2013.566-5.517-7.546c-.544-.73-1.582-.881-2.311-.335-.729.545-.879%201.582-.333%202.313l6.877%209.412c.546.729%201.581.876%202.311.33.195-.144.345-.322.454-.523l10.682-15.303c.53-.743.353-1.774-.389-2.303z%22%2F%3E%3C%2Fsvg%3E" alt="" width="25px" height="25px" />
+              <span class="benefitHeader">
+                Возможность мгновенного увеличения мощности
+              </span>
+            </div>
+            <div class="benefit">
+              <img src="data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220.959%22%20height%3D%2218.766%22%20viewBox%3D%22-1113.375%20236.739%2020.959%2018.766%22%20enable-background%3D%22new%20-1113.375%20236.739%2020.959%2018.766%22%3E%3Cpath%20fill%3D%22%2300C084%22%20d%3D%22M-1093.11%20237.045c-.744-.529-1.776-.353-2.303.389l-9.471%2013.566-5.517-7.546c-.544-.73-1.582-.881-2.311-.335-.729.545-.879%201.582-.333%202.313l6.877%209.412c.546.729%201.581.876%202.311.33.195-.144.345-.322.454-.523l10.682-15.303c.53-.743.353-1.774-.389-2.303z%22%2F%3E%3C%2Fsvg%3E" alt="" width="25px" height="25px" />
+              <span class="benefitHeader">
+                Защита сайтов от взлома
+              </span>
+            </div>
+          </div>
+          <div class="benefitsItem">
+            <div class="benefit">
+              <img src="data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220.959%22%20height%3D%2218.766%22%20viewBox%3D%22-1113.375%20236.739%2020.959%2018.766%22%20enable-background%3D%22new%20-1113.375%20236.739%2020.959%2018.766%22%3E%3Cpath%20fill%3D%22%2300C084%22%20d%3D%22M-1093.11%20237.045c-.744-.529-1.776-.353-2.303.389l-9.471%2013.566-5.517-7.546c-.544-.73-1.582-.881-2.311-.335-.729.545-.879%201.582-.333%202.313l6.877%209.412c.546.729%201.581.876%202.311.33.195-.144.345-.322.454-.523l10.682-15.303c.53-.743.353-1.774-.389-2.303z%22%2F%3E%3C%2Fsvg%3E" alt="" width="25px" height="25px" />
+              <span class="benefitHeader">
+                Высокоэффективная фильтрация спама
+              </span>
+            </div>
+            <div class="benefit">
+              <img src="data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220.959%22%20height%3D%2218.766%22%20viewBox%3D%22-1113.375%20236.739%2020.959%2018.766%22%20enable-background%3D%22new%20-1113.375%20236.739%2020.959%2018.766%22%3E%3Cpath%20fill%3D%22%2300C084%22%20d%3D%22M-1093.11%20237.045c-.744-.529-1.776-.353-2.303.389l-9.471%2013.566-5.517-7.546c-.544-.73-1.582-.881-2.311-.335-.729.545-.879%201.582-.333%202.313l6.877%209.412c.546.729%201.581.876%202.311.33.195-.144.345-.322.454-.523l10.682-15.303c.53-.743.353-1.774-.389-2.303z%22%2F%3E%3C%2Fsvg%3E" alt="" width="25px" height="25px" />
+              <span class="benefitHeader">
+                Надежная защита от DDoS атак
+              </span>
+            </div>
+            <div class="benefit">
+              <img src="data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220.959%22%20height%3D%2218.766%22%20viewBox%3D%22-1113.375%20236.739%2020.959%2018.766%22%20enable-background%3D%22new%20-1113.375%20236.739%2020.959%2018.766%22%3E%3Cpath%20fill%3D%22%2300C084%22%20d%3D%22M-1093.11%20237.045c-.744-.529-1.776-.353-2.303.389l-9.471%2013.566-5.517-7.546c-.544-.73-1.582-.881-2.311-.335-.729.545-.879%201.582-.333%202.313l6.877%209.412c.546.729%201.581.876%202.311.33.195-.144.345-.322.454-.523l10.682-15.303c.53-.743.353-1.774-.389-2.303z%22%2F%3E%3C%2Fsvg%3E" alt="" width="25px" height="25px" />
+              <span class="benefitHeader">
+                Скидки для партнёров REG.RU
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -325,170 +631,52 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      <div id="carouselExampleIndicators" class="ourComments carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="ourCommentContainer">
-              <div class="ourCommentContainerItem">
-                <span class="ourCommentContainerItemHeader">
-                  Отзывы клиентов
-                </span>
-                <span>
-                  Мой сайт на этом хостинге уже третий год, у них же регистрировал доменное имя. Полностью доволен, нареканий нет, надежный и быстрый, ни разу не было такого, что сайт недоступен или тормозит. Масса полезных связанных сервисов. Наверное единственный незначительный минус - цена, она не такая низкая, как у других хостеров, однако для меня всегда лучше заплатить чуть больше, но быть уверенным в том, что никаких проблем не возникнет. Если резюмировать, то это взрослый, состоявшийся хостинг для взрослых, серьезных людей.
-                </span>
-              </div>
-              <img src="https://www.reg.ru/dist/b-icon_feedback_man.ebe7f49e5c1007d9be7c2268da42b44e.svg" alt="" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="ourCommentContainer">
-              <div class="ourCommentContainerItem">
-                <span class="ourCommentContainerItemHeader">
-                  Отзывы клиентов
-                </span>
-                <span>
-                  Доброго дня! Меня зовут Виталий, я веб-мастер. Стаж работы 6 лет. У меня около 30 активных сайтов на разных хостингах. REG.RU самый лучший из всех, которые я знаю. По всем показателям. Это проверено временем. Поэтому все новые проекты я делаю уже тут. А также участвую в партнёрской программе. От души благодарю всю команду за вашу замечательную, компетентную и достойную работу!
-                </span>
-                <span>
-                  Виталий на http://ru.hostings.info/reg-ru.html
-                </span>
-              </div>
-              <img src="https://www.reg.ru/dist/b-icon_feedback_man.ebe7f49e5c1007d9be7c2268da42b44e.svg" alt="" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="ourCommentContainer">
-              <div class="ourCommentContainerItem">
-                <span class="ourCommentContainerItemHeader">
-                  Отзывы клиентов
-                </span>
-                <span>
-                  Нравится в Reg.Ru, что действительно есть из чего выбрать – хостинг действительно гибкий в плане требований пользователя. Самые разные варианты тарифных планов по разным ценам. Плюс гарантированный возврат оплаты по требованию – неплохое впечатление. Посмотрим, как дальше покажет себя в плане надежности, но пока вроде все хорошо, а если там раз в полгода обвалится, так и на солнце есть пятна.
-                </span>
-                <span>
-                  Владимир на https://hosters.ru/
-                </span>
-              </div>
-              <img src="https://www.reg.ru/dist/b-icon_feedback_man.ebe7f49e5c1007d9be7c2268da42b44e.svg" alt="" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="ourCommentContainer">
-              <div class="ourCommentContainerItem">
-                <span class="ourCommentContainerItemHeader">
-                  Отзывы клиентов
-                </span>
-                <span>
-                  Нравится в Reg.Ru, что действительно есть из чего выбрать – хостинг действительно гибкий в плане требований пользователя. Самые разные варианты тарифных планов по разным ценам. Плюс гарантированный возврат оплаты по требованию – неплохое впечатление. Посмотрим, как дальше покажет себя в плане надежности, но пока вроде все хорошо, а если там раз в полгода обвалится, так и на солнце есть пятна.
-                </span>
-                <span>
-                  Владимир на https://hosters.ru/
-                </span>
-              </div>
-              <img src="https://www.reg.ru/dist/b-icon_feedback_man.ebe7f49e5c1007d9be7c2268da42b44e.svg" alt="" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="ourCommentContainer">
-              <div class="ourCommentContainerItem">
-                <span class="ourCommentContainerItemHeader">
-                  Отзывы клиентов
-                </span>
-                <span>
-                  Нравится в Reg.Ru, что действительно есть из чего выбрать – хостинг действительно гибкий в плане требований пользователя. Самые разные варианты тарифных планов по разным ценам. Плюс гарантированный возврат оплаты по требованию – неплохое впечатление. Посмотрим, как дальше покажет себя в плане надежности, но пока вроде все хорошо, а если там раз в полгода обвалится, так и на солнце есть пятна.
-                </span>
-                <span>
-                  Владимир на https://hosters.ru/
-                </span>
-              </div>
-              <img src="https://www.reg.ru/dist/b-icon_feedback_man.ebe7f49e5c1007d9be7c2268da42b44e.svg" alt="" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="ourCommentContainer">
-              <div class="ourCommentContainerItem">
-                <span class="ourCommentContainerItemHeader">
-                  Отзывы клиентов
-                </span>
-                <span>
-                  Нравится в Reg.Ru, что действительно есть из чего выбрать – хостинг действительно гибкий в плане требований пользователя. Самые разные варианты тарифных планов по разным ценам. Плюс гарантированный возврат оплаты по требованию – неплохое впечатление. Посмотрим, как дальше покажет себя в плане надежности, но пока вроде все хорошо, а если там раз в полгода обвалится, так и на солнце есть пятна.
-                </span>
-                <span>
-                  Владимир на https://hosters.ru/
-                </span>
-              </div>
-              <img src="https://www.reg.ru/dist/b-icon_feedback_man.ebe7f49e5c1007d9be7c2268da42b44e.svg" alt="" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="ourCommentContainer">
-              <div class="ourCommentContainerItem">
-                <span class="ourCommentContainerItemHeader">
-                  Отзывы клиентов
-                </span>
-                <span>
-                  Нравится в Reg.Ru, что действительно есть из чего выбрать – хостинг действительно гибкий в плане требований пользователя. Самые разные варианты тарифных планов по разным ценам. Плюс гарантированный возврат оплаты по требованию – неплохое впечатление. Посмотрим, как дальше покажет себя в плане надежности, но пока вроде все хорошо, а если там раз в полгода обвалится, так и на солнце есть пятна.
-                </span>
-                <span>
-                  Владимир на https://hosters.ru/
-                </span>
-              </div>
-              <img src="https://www.reg.ru/dist/b-icon_feedback_man.ebe7f49e5c1007d9be7c2268da42b44e.svg" alt="" />
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-      <div class="value">
-        <div class="valueItemContainer">
-          <span class="valueItemContainerHeader">
-            Ваша оценка
-          </span>
-          <span>
-            Мы внимательно следим за вашими оценками и отзывами о работе службы поддержки
-          </span>
-        </div>
-        <img class="valueImage" src="https://www.reg.ru/dist/b-icon_smile_good.be938599be41196164d8be7d0ca0a0e3.svg" alt="">
-        <div class="valueItemContainer">
-          <span class="valueItemContainerHeader">
-            33 580
-          </span>
-          <span>
-            клиентов выразили
-            благодарность
-          </span>
-        </div>
-        <img src="https://www.reg.ru/dist/b-icon_smile_bad.97923b12d6010f1b80a4a529d01be172.svg" class="valueImage" alt="">
-        <div class="valueItemContainer">
-          <span class="valueItemContainerHeader">
-            1 623
-          </span>
-          <span>
-            клиента подсказали,
-            как нам стать лучше
-          </span>
-        </div>
-      </div>
-      <div class="thanks">
-        <span>
-          Спасибо, что выбрали REG.RU!
+      <div class="wantSSL">
+        <span class="wantSSLHeader">
+          Выгодные решения для хостинга сайтов от компании REG.RU
         </span>
+        <div class="wantSSLColumns">
+          <div class="wantSSLColumn">
+            <span>
+              Хостинг для сайта — услуга, позволяющая пользователю арендовать необходимые ресурсы на сервере и разместить на них свой сайт, веб-приложение или другой онлайн-контент. В REG.RU вы можете купить виртуальный хостинг для сайта, обеспечивающий его бесперебойную работу. Наши хостинг-серверы размещены в России в крупнейшем дата-центре DataPro.
+            </span>
+            <span>
+              Выбор надёжного хостера важен, поскольку хостинг — основа для создания сайтов и запуска онлайн-проектов. Когда вы размещаете файлы на удалённом веб-сервере, провайдер отвечает за их сохранность и безопасность. В отличие от free-сервисов, качественный платный веб-хостинг гарантирует быстрый доступ к страницам для большого числа посетителей без лишней рекламы.
+            </span>
+            <span>
+              REG.RU заботится о каждом клиенте: мы предлагаем shared web-hosting по выгодным ценам с широким выбором тарифных планов и параметров. Собираетесь ли вы создать сайт с личным портфолио или планируете запустить целый интернет-магазин — у нас наверняка найдётся подходящий вариант хостинга. Стоимость самого дешёвого тарифа Host Lite — 178 рублей в месяц. Если вы закажете услуги хостинга на больший срок, цена станет выгоднее: при оплате на год стоимость составит 151 рубль в месяц, а при оплате на три года — всего 98 рублей в месяц.
+            </span>
+          </div>
+          <div class="wantSSLColumn">
+            <span class="wantSSLColumnHeader">
+              Недорогой веб-хостинг послужит хорошим стартом для новичков и подойдёт для создания статических HTML сайтов. Если ваш проект перерастёт в коммерческий ресурс, вы всегда можете выбрать более мощный тариф безлимитного хостинга с поддержкой PHP и MySQL, для больших высоконагруженных сайтов и профессиональных платформ. Для юридических лиц (в том числе и ООО) доступен электронный документооборот (ЭДО), который позволяет быстро обмениваться документами и производить операции с услугами хостинга и доменов.
+            </span>
+            <span>
+              Технические характеристики web-хостинга включают высокопроизводительный SSD RAID, Linux CentOS или Windows для ASP.NET c поддержкой Python, Java, PHP, Perl и фреймворка Django (на тарифах начиная с Host-A). К ftp серверу доступ осуществляется по протоколам FTP и SSH.
+            </span>
+            <span>
+              Нам важна безопасность вашего сайта, поэтому в дополнение к услуге хостинга вы бесплатно получите:
+            </span>
+            <span>
+              защиту от DDoS-атак;
+            </span>
+            <span>
+              безлимитный трафик;
+            </span>
+            <span>
+              двойную антивирусную проверку;
+            </span>
+            <span>
+              SSL-сертификат.
+            </span>
+            <span>
+              Для лучшей защищённости сайта можно дополнительно заказать лечение заражённых файлов и расширенную защиту от спама.
+            </span>
+            <span>
+              При переносе хостинга в REG.RU на любой тариф вас ждёт месяц услуги в подарок!
+            </span>
+          </div>
+        </div>
       </div>
     </div>
     <Footer />
@@ -806,6 +994,298 @@ export default {
 
   .notLastDomainsAction {
     border-right: 1px solid rgb(200, 200, 200);
+  }
+
+  .wantSSLHeader {
+    margin: auto;
+    font-size: 28px;
+    font-weight: bolder;
+  }
+
+  .wantSSL {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wantSSLColumns {
+    margin: 25px 0px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0px 125px;
+  }
+
+  .wantSSLColumn {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 50px;
+  }
+
+  .wantSSLColumnHeader {
+    font-weight: bolder;
+    font-size: 24px;
+  }
+
+  .benefitsItem {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px;
+  }
+
+  .benefit {
+    width: 325px;
+    height: 100px;
+    display: flex;
+    margin: 0px 25px;
+    align-items: center;
+  }
+
+  .benefits {
+    display: flex;
+    flex-direction: column;
+    border: 10px solid rgb(250, 200, 0);
+    box-sizing: border-box;
+    padding: 25px;
+    margin: auto;
+  }
+
+  .benefitsHeader {
+    font-weight: bolder;
+    font-size: 24px;
+  }
+
+  .benefitHeader {
+    margin-left: 25px;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(125, 125, 125);
+  }
+
+  .hopeAndSpeed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hopeAndSpeedItem {
+    width: 375px;
+    margin: 0px 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hopeAndSpeedItemHeader {
+    font-size: 20px;
+    font-weight: bolder;
+  }
+
+  .fullList {
+    color: rgb(0, 200, 255);
+    cursor: pointer;
+  }
+
+  .supportCMS {
+    margin: auto;
+  }
+  
+  .cmsList {
+    margin: 25px 0px;
+    display: flex;
+  }
+
+  .cms {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 35px;
+  }
+
+  .supportCMSHeader {
+    font-size: 24px;
+    font-weight: bolder;
+  }
+
+  .freeSslCertItemHeader {
+    font-size: 24px;
+    font-weight: bolder;
+  }
+
+  .freeSslCert {
+    border: 10px solid rgb(150, 150, 150);
+    width: 75%;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    padding: 15px;
+    margin: auto;
+    display: flex;
+  }
+
+  .freeSslCertItem {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+  }
+
+  .vps {
+    display: flex;
+  }
+  .vpsContainerHeader {
+    font-size: 24px;
+    font-weight: bolder;
+  }
+
+  .vpsContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 15px;
+  }
+
+  .vpsContainerItem {
+    display: flex;
+  }
+
+  .withoutProgrammingItem {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .withoutProgramming {
+    width: 75%;
+    margin: 25px auto;
+    background-color: rgb(100, 255, 255);
+    height: 85px;
+    box-sizing: border-box;
+    padding: 15px;
+  }
+
+  .withoutProgrammingItemHeader {
+    color: rgb(125, 125, 125);
+    font-size: 20px;
+    font-weight: bolder;
+  }
+
+  .benefitsLeft {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 25px;
+  }
+
+  .benefitsList {
+    display: flex;
+    justify-content: center;
+  }
+
+  .benefitContainer {
+    background-color: rgb(230, 230, 230);
+    height: 125px;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 350px;
+    margin: 15px;
+  }
+
+  .benefitText {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .hosting {
+    display: flex;
+    box-sizing: border-box;
+    padding: 75px;
+  }
+
+  .hostingItem {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hostingItemHeader {
+    font-size: 36px;
+    font-weight: bolder;
+  }
+
+  .hostingItemSubheader {
+    font-size: 24px;
+    font-weight: bolder;
+  }
+
+  .tariffs {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+  }
+
+  .tariffsHeader {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .tariff {
+    margin: 35px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px rgb(150, 150, 150);
+    width: 425px;
+    height: 500px;
+    box-sizing: border-box;
+    padding: 25px;
+  }
+
+  .tariffName {
+    color: rgb(0, 100, 255);
+    font-weight: bolder;
+    margin: 10px 0px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-style: dashed;
+  }
+
+  .tariffDesc {
+    color: rgb(125, 125, 125);
+  }
+
+  .tariffSize {
+    color: rgb(125, 125, 125);
+    font-weight: 400;
+    font-size: 22px;
+  }
+
+  .tariffSites {
+    color: rgb(100, 100, 100);
+    font-weight: bolder;
+  }
+
+  .tariffLimit {
+    color: rgb(175, 175, 175);
+  }
+
+  .tariffMainPrice {
+    font-size: 24px;
+  }
+
+  .tariffPrice {
+    font-weight: bolder;
+  }
+
+  .tariffsList {
+    display: flex;
+  }
+
+  .tariffsHeaderLeftHeader {
+    font-weight: bolder;
+    font-size: 20px;
+    color: rgb(75, 75, 75);
+    margin: 0px 25px;
+  }
+
+  .tariffsHeaderLeftSubheader {
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(75, 75, 75);
+    margin: 0px 25px;
   }
 
 </style>

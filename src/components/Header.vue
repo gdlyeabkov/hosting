@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="headerBottom">
-            <span class="material-icons headerBottomItem">
+            <span @click="isContextMenu = !isContextMenu" class="material-icons headerBottomItem">
                 menu
             </span>
             <span class="headerBottomItem" @click="$router.push({ name: 'DomainsNew' })">
@@ -62,6 +62,35 @@
         </div>
         <Auth v-if="isAuth" @closeAuthDialog="closeAuthDialogHandler" />
         <CookiesAlert v-if="isCookies" @closeCookiesDialog="closeCookieDialogHandler" />
+        <div class="contextMenu" v-if="isContextMenu">
+            <span class="contextMenuItem">
+                Домены
+            </span>
+            <span class="contextMenuItem">
+                Конструктор и CMS
+            </span>
+            <span class="contextMenuItem">
+                Хостинг
+            </span>
+            <span class="contextMenuItem">
+                VPS
+            </span>
+            <span class="contextMenuItem">
+                Серверы и ДЦ
+            </span>
+            <span class="contextMenuItem">
+                SSL
+            </span>
+            <span class="contextMenuItem">
+                Сервисы
+            </span>
+            <span class="contextMenuItem">
+                Партнерам
+            </span>
+            <span class="contextMenuItem">
+                Помощь
+            </span>
+        </div>
     </div>
 </template>
 
@@ -76,7 +105,8 @@ export default {
         return {
             isAuth: false,
             isCookies: true,
-            domain: ''
+            domain: '',
+            isContextMenu: false
         }
     },
     props: {
@@ -182,5 +212,22 @@ export default {
         text-underline-offset: 5px;
     }
 
+    .contextMenu {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        box-shadow: 0px 0px 10px rgb(150, 150, 150);
+        width: 205px;
+        height: 275px;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 15px 25px;
+    }
+
+    .contextMenuItem {
+        cursor: pointer;
+    }
 
 </style>
