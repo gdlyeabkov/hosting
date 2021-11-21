@@ -34,6 +34,7 @@ export default {
         padding: 25px;
         border-radius: 0px 8px 8px 0px;
         z-index: 10;
+        box-shadow: 0px 0px 15px rgb(150, 150, 150);
     }
 
     .closeContainer {

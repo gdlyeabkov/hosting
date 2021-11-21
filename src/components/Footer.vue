@@ -2,9 +2,7 @@
     <div class="footer">
         <div class="subscribeContainer">
             <div class="subscribeContainerItem subscribeItemHeader">
-                <span class="material-icons subscribeIcon">
-                    local_post_office
-                </span>
+                <img src="https://www.reg.ru/dist/b-news-subscribe__text_type_initial.77f48e189e3fa88e7b524e1860a9c7fa.svg" alt="">
                 <span class="subscribeHeader">
                     Рассылка REG.RU. Лайфхаки, скидки и новости об IT
                 </span>

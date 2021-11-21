@@ -24,25 +24,25 @@
             <span class="material-icons headerBottomItem">
                 menu
             </span>
-            <span class="headerBottomItem">
+            <span class="headerBottomItem" @click="$router.push({ name: 'DomainsNew' })">
                 Домены
             </span>
-            <span class="headerBottomItem">
+            <span class="headerBottomItem" @click="$router.push({ name: 'CMSAndConstructor' })">
                 Конструктор и CMS
             </span>
-            <span class="headerBottomItem">
+            <span class="headerBottomItem" @click="$router.push({ name: 'Hosting' })">
                 Хостинг
             </span>
-            <span class="headerBottomItem">
+            <span class="headerBottomItem" @click="$router.push({ name: 'VPS' })">
                 VPS
             </span>
-            <span class="headerBottomItem">
+            <span class="headerBottomItem" @click="$router.push({ name: 'ServersAndDataCenters' })">
                 Серверы и ДЦ
             </span>
-            <span class="headerBottomItem">
+            <span class="headerBottomItem" @click="$router.push({ name: 'SSL' })">
                 SSL
             </span>
-            <div class="headerBottomItem">
+            <div class="headerBottomItem" @click="$router.push({ name: 'Services' })">
                 <span>
                     Сервисы
                 </span>
