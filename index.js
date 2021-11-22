@@ -1,7 +1,12 @@
+const Recaptcha = require('recaptcha').Recaptcha
+
+const PUBLIC_KEY  = 'YOUR_PUBLIC_KEY',
+    PRIVATE_KEY = 'YOUR_PRIVATE_KEY'
+
 const multer  = require('multer')
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'uploads')
+      cb(null, 'sites')
     },
     filename: function (req, file, cb) {
       cb(null, file.originalname)
@@ -35,7 +40,7 @@ var transporter = nodemailer.createTransport({
 
 const url = `mongodb+srv://glebClusterUser:glebClusterUserPassword@cluster0.fvfru.mongodb.net/sites?retryWrites=true&w=majority`
 
-const connectionParams={
+const connectionParams = {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true 
@@ -70,7 +75,6 @@ const DeployerModel = mongoose.model('DeployerModel', DeployerSchema)
 const SiteSchema = new mongoose.Schema({
     domain: String,
     deployer: String,
-    price: Number,
     created: {
         type: Date,
         default: Date.now
@@ -83,7 +87,7 @@ const DomainSchema = new mongoose.Schema({
     name: String,
     isSell: {
         type: Boolean,
-        default: true
+        default: false
     },
     price: Number,
     created: {
@@ -94,16 +98,16 @@ const DomainSchema = new mongoose.Schema({
 
 const DomainModel = mongoose.model('DomainModel', DomainSchema)
 
-app.get('/api/sites/get', (req, res)=>{
+// app.get('/api/sites/get', (req, res) => {
         
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+//     res.setHeader('Access-Control-Allow-Origin', '*');
+//     res.setHeader('Access-Control-Allow-Credentials', true);
+//     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
+//     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
     
-    return res.json({ status: 'OK' })
+//     return res.json({ status: 'OK' })
 
-})
+// })
 
 app.get('/api/deployers/create', async (req, res)=>{
     
@@ -164,7 +168,7 @@ app.get('/api/deployers/create', async (req, res)=>{
     })
 })
 
-app.get('/api/domains/create', async (req, res)=>{
+app.get('/api/domains/create', async (req, res) => {
     
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Credentials', true);
@@ -172,7 +176,7 @@ app.get('/api/domains/create', async (req, res)=>{
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
 
     let query = DomainModel.find({  })
-    query.exec((err, allDeployers) => {
+    query.exec((err, allDomains) => {
         if (err){
             return res.json({ "status": "Error" })
         }
@@ -189,7 +193,7 @@ app.get('/api/domains/create', async (req, res)=>{
         if(domainExists){
             return res.json({ status: 'Error' })
         } else {
-            const newDomain = new DomainModel({ name: req.query.domainname, deployer: req.query.deployerid, price: Number(req.query.domainprice) })
+            const newDomain = new DomainModel({ name: req.query.domainname, price: Number(req.query.domainprice) })
             newDomain.save(function (err) {
                 if(err){
                     return res.json({ "status": "Error" })
@@ -226,22 +230,28 @@ app.get('/api/sites/create', async (req, res)=>{
         if(siteExists){
             return res.json({ status: 'Error' })
         } else {
-            const newSite = new SiteModel({ domain: req.query.sitedomain, deployer: req.query.deployerid, price: Number(req.query.siteprice) })
+            const newSite = new SiteModel({ domain: req.query.sitedomain, deployer: req.query.deployerid })
             newSite.save(function (err) {
                 if(err){
                     return res.json({ "status": "Error" })
                 } else {
-                    let mailOptions = {
-                        from: `"${'gdlyeabkov'}" <${"gdlyeabkov"}>`,
-                        to: `${deployer.email}`,
-                        subject: `Hosting поздравляет вас с запуском сайта ${req.query.sitename}`,
-                        html: `<h3>Вы запустили сайт</h3><p>Сайт ${req.query.sitename} успешно запущен</p>`,
-                    }
-                    transporter.sendMail(mailOptions, function (err, info) {
-                        if (err) {
+                    let query =  DeployerModel.findOne({ '_id': req.query.deployerid }, function(err, deployer){
+                        if (err){
                             return res.json({ "status": "Error" })
                         } else {
-                            return res.json({ status: 'OK' })
+                            let mailOptions = {
+                                from: `"${'gdlyeabkov'}" <${"gdlyeabkov"}>`,
+                                to: `${deployer.email}`,
+                                subject: `Hosting поздравляет вас с запуском сайта ${req.query.sitename}`,
+                                html: `<h3>Вы запустили сайт</h3><p>Сайт ${req.query.sitename} успешно запущен</p>`,
+                            }
+                            transporter.sendMail(mailOptions, function (err, info) {
+                                if (err) {
+                                    return res.json({ "status": "Error" })
+                                } else {
+                                    return res.json({ status: 'OK' })
+                                }
+                            })
                         }
                     })
                 }
@@ -257,7 +267,6 @@ app.get('/api/deployers/check', (req, res) => {
     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
     
-    console.log(`req.query.deployeremail: ${req.query.deployeremail}; req.query.deployerpassword: ${req.query.deployerpassword};`)
     let queryBefore = DeployerModel.find({ email: { $in:req.query.deployeremail } })
     queryBefore.exec((err, allDeployers) => {
         if(err){
@@ -282,8 +291,187 @@ app.get('/api/deployers/check', (req, res) => {
     })
 })
 
+app.get('/api/domains/sell', (req, res) => {
+
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+    
+    let query = DeployerModel.findOne({ '_id': req.query.deployerid }, function(err, deployer){
+        if (err){
+            return res.json({ status: 'OK' })
+        } else {
+            if(deployer != null && deployer != undefined) {
+                if (deployer.amount >= Number(req.query.domainprice)) {
+                    DeployerModel.updateOne({ _id: req.query.deployerid }, 
+                    {
+                        "$push": { 
+                            domains: [
+                                {
+                                    id: req.query.domainid
+                                }
+                            ]
+                        },
+                        "$inc": { "amount": -Number(req.query.domainprice) }
+                    }, (err, deployer) => {
+                        if (err) {
+                            return res.json({ "status": "Error" })        
+                        }
+                        DomainModel.updateOne({ _id: req.query.domainid },
+                            {
+                                '$set': { isSell: true }
+                            },
+                        (err, domain) => {
+                            if (err) {
+                                return res.json({ status: 'Error' })
+                            }
+                            return res.json({ "status": "OK" })
+                        })
+                        
+                    })
+                } else {
+                    return res.json({ "status": "Error" })
+                }
+            } else {
+                return res.json({ "status": "Error" })
+            }
+        }
+    })
+    
+})
+
+app.get('/api/domains/all', (req, res) => {
+    
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+    
+    let query = DomainModel.find({  })
+    query.exec((err, allDomains) => {
+        if (err){
+            return res.json({ "status": "Error" })
+        } else  {
+            let query = DeployerModel.findOne({ _id: req.query.deployerid })
+            query.exec((err, deployer) => {
+                if (err) {
+                    return res.json({ status: 'Error' })
+                } else {
+                    return res.json({ status: 'OK', domains: allDomains, deployer: deployer })
+                }
+            })
+        }
+    })
+
+})
+
+app.get('/api/recaptcha', (req, res) => {
+    
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+
+    let recaptcha = new Recaptcha(PUBLIC_KEY, PRIVATE_KEY)
+    console.log(`recaptcha: ${recaptcha.toHTML()}`)
+    return res.json({ recaptcha: recaptcha.toHTML() })
+})
+
+app.post('/api/sites/upload', upload.single('myFile'), (req, res) => {
+    
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+    
+    if (!req.file) {
+        console.log('не загружаете файлы')
+        return res.json({ status: 'Error' })
+    }
+    console.log('загружаются файлы')
+    
+    let query = SiteModel.find({  })
+    query.exec((err, allSites) => {
+        if (err){
+            return res.json({ "status": "Error" })
+        }
+        
+        let siteExists = false
+
+        if(allSites >= 1) {
+            allSites.forEach(site => {
+                if(site.domain === req.query.sitedomain){
+                    siteExists = true
+                }
+            })
+        }
+        if(siteExists){
+            return res.json({ status: 'Error' })
+        } else {
+            const newSite = new SiteModel({ domain: req.query.sitedomain, deployer: req.query.deployerid })
+            newSite.save(function (err) {
+                if(err){
+                    return res.json({ "status": "Error" })
+                } else {
+                    let query =  DeployerModel.findOne({ '_id': req.query.deployerid }, function(err, deployer){
+                        if (err){
+                            return res.json({ "status": "Error" })
+                        } else {
+                            let mailOptions = {
+                                from: `"${'gdlyeabkov'}" <${"gdlyeabkov"}>`,
+                                to: `${deployer.email}`,
+                                subject: `Hosting поздравляет вас с запуском сайта ${req.query.sitename}`,
+                                html: `<h3>Вы запустили сайт</h3><p>Сайт ${req.query.sitename} успешно запущен</p>`,
+                            }
+                            transporter.sendMail(mailOptions, function (err, info) {
+                                if (err) {
+                                    return res.json({ "status": "Error" })
+                                } else {
+                                    return res.json({ status: 'OK' })
+                                }
+                            })
+                        }
+                    })
+                }
+            })
+        }
+    })
+    
+    DeployerModel.updateOne({ _id: req.query.deployerid }, 
+        { 
+            "$push": { 
+                sites: [
+                    {
+                        id: req.query.sid
+                    }
+                ]
+                    
+            }
+
+        }, (err, deployer) => {
+            if(err){
+                return res.json({ "status": "Error" })        
+            }
+            return res.redirect('http://localhost:8080/')
+    
+    })
+})
+
+app.get('/api/sites/get', (req, res) => {
+    
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+    
+    console.log('возвращаю сайт')
+    return res.sendFile(__dirname + `/sites/index.html`)
+
+})
 
 app.get('**', (req, res) => { 
+    
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");

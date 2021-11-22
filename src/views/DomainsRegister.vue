@@ -5,8 +5,8 @@
                 <span  class="material-icons input-group-text" id="basic-addon1">
                     search
                 </span>
-                <input type="text" class="form-control" />    
-                <button class="btn btn-light input-group-text" id="basic-addon1" @click="selectDomains()">
+                <input v-model="keywords" @keyup="refreshDomains($event, false)" type="text" class="form-control" />    
+                <button class="btn btn-light input-group-text" id="basic-addon1" @click="refreshDomains($event, true)">
                     Подобрать
                 </button>
             </div>
@@ -27,7 +27,7 @@
                 </span>
             </div>
             <div class="domainsList">
-                <div class="domain">
+                <!-- <div class="domain">
                     <div class="domainAside">
                         <span class="domainName">
                             дерюга
@@ -153,6 +153,32 @@
                             12 400 Р
                         </span>
                         <span class="material-icons-outlined outlineDomainMarketLogo">
+                            local_grocery_store
+                        </span>
+                    </div>
+                </div> -->
+                <div class="domain" v-for="domain in tempDomains" :key="domain._id">
+                    <div class="domainAside">
+                        <span class="domainName">
+                            {{ domain.name.split('.')[0] }}
+                            <span class="domainOneLevel">
+                                {{ `.${domain.name.split('.')[1]}` }}
+                            </span>
+                        </span>
+                        <div class="domainsMarket">
+                            <span class="material-icons domainsMarketLogo">
+                                local_grocery_store
+                            </span>
+                            <span class="domainsMarketLabel">
+                                Магазин доменов
+                            </span>
+                        </div>
+                    </div>
+                    <div class="domainArticle">
+                        <span class="domainPrice">
+                            {{ domain.price }} Р
+                        </span>
+                        <span class="material-icons-outlined outlineDomainMarketLogo"  @click="buyDomain(domain)">
                             local_grocery_store
                         </span>
                     </div>
@@ -171,8 +197,101 @@
 </template>
 
 <script>
-export default {
 
+import * as jwt from 'jsonwebtoken'
+
+export default {
+    name: 'DomainsRegister',
+    data() {
+        return {
+            deployer: {},
+            domains: [],
+            keywords: '',
+            tempDomains: [],
+            token: window.localStorage.getItem('hostingtoken')
+        }
+    },
+    mounted() {
+        jwt.verify(this.token, 'hostingsecret', (err, decoded) => {
+            if (err) {
+                this.$router.push({ name: "Home" })
+            } else {
+                fetch(`http://localhost:4000/api/domains/all/?deployerid=${decoded.deployer}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                        start(controller) {
+                            function push() {
+                                reader.read().then( ({done, value}) => {
+                                    if (done) {
+                                        controller.close();
+                                        return;
+                                    }
+                                    controller.enqueue(value)
+                                    push()
+                                })
+                            }
+                            push()
+                        }
+                    })
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    if(JSON.parse(result).status === 'OK') {
+                        this.domains = JSON.parse(result).domains
+                        this.deployer = JSON.parse(result).deployer
+                        this.tempDomains = this.domains
+                    }
+                })    
+            }
+        })
+    },
+    methods: {
+        buyDomain(domain) {
+           console.log(`domain: ${domain._id}; ${domain.price}; ${this.deployer._id}`)
+           if (!domain.isSell) {
+                fetch(`http://localhost:4000/api/domains/sell/?deployerid=${this.deployer._id}&domainid=${domain._id}&domainprice=${domain.price}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                        start(controller) {
+                            function push() {
+                                reader.read().then( ({done, value}) => {
+                                    if (done) {
+                                        controller.close();
+                                        return;
+                                    }
+                                    controller.enqueue(value)
+                                    push()
+                                })
+                            }
+                            push()
+                        }
+                    })
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    if(JSON.parse(result).status === 'OK') {
+                        this.domains = JSON.parse(result).domains
+                    }
+                }) 
+            } else {
+                alert(`Домен ${domain.name} уже продан. Его нельзя купить еще раз.`)
+            }
+        },
+        refreshDomains(event, throughput) {
+            if (event.key === 'Enter' || throughput) {
+                this.tempDomains = this.domains
+                this.tempDomains = this.tempDomains.filter(domain => domain.name.includes(this.keywords))
+            }
+        }
+    }
 }
 </script>
 
@@ -268,6 +387,7 @@ export default {
     .domainsMarketLogo {
         font-size: 12px;
         margin: 0px 15px;
+        cursor: pointer;
     }
 
     .domainsMarketLabel {
@@ -295,6 +415,7 @@ export default {
         box-sizing: border-box;
         padding: 5px;
         color: rgb(150, 150, 150);
+        cursor: pointer;
     }
 
 </style>

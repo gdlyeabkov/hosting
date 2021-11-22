@@ -678,6 +678,24 @@
           </div>
         </div>
       </div>
+
+      <div>
+        <form enctype="multipart/form-data" method="POST" :action="`http://localhost:4000/api/sites/upload/?deployerid=${deployer._id}&sitedomain=${selectedDomain}`">
+          <input  type="file" name="myFile" ref="httpDocs" class="form-control" />
+          <select v-model="selectedDomain" class="form-select h-75 w-25" aria-label="Default select example">
+            <option v-for="domain in deployer.domains.map(domain => domain.id)" :value="domain" :key="domain">
+              {{ domain }}
+            </option>
+          </select>
+          <button type="submit" class="btn btn-success">
+            Опубликовать Сайт
+          </button>
+          <!-- <button @click="deploySite" class="btn btn-success">
+            Опубликовать Сайт
+          </button> -->
+        </form>
+      </div>
+
     </div>
     <Footer />
   </div>
@@ -688,15 +706,97 @@
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 
+import * as jwt from 'jsonwebtoken'
+
 export default {
   name: 'Home',
   data() {
     return {
       domain: '',
-      domainsZones: []
+      domainsZones: [],
+      deployer: {
+        _id: Math.floor(Math.random() * 5000),
+        domains: []
+      },
+      selectedDomain: '',
+      token: window.localStorage.getItem('hostingtoken')
     }
   },
+  mounted() {
+    jwt.verify(this.token, 'hostingsecret', (err, decoded) => {
+      if (err) {
+        this.$router.push({ name: "Home" })
+      } else {
+        fetch(`http://localhost:4000/api/domains/all/?deployerid=${decoded.deployer}`, {
+          mode: 'cors',
+          method: 'GET'
+        }).then(response => response.body).then(rb  => {
+            const reader = rb.getReader()
+            return new ReadableStream({
+              start(controller) {
+                  function push() {
+                    reader.read().then( ({done, value}) => {
+                      if (done) {
+                        controller.close();
+                        return;
+                      }
+                      controller.enqueue(value)
+                      push()
+                    })
+                  }
+                  push()
+                }
+            })
+        }).then(stream => {
+            return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+        })
+        .then(result => {
+          if(JSON.parse(result).status === 'OK') {
+            this.deployer = JSON.parse(result).deployer
+            if (this.deployer.domains.length >= 1) {
+              this.selectedDomain = this.deployer.domains.map(domain => domain.id)[0]
+            }
+          }
+        })    
+      }
+    })
+  },
   methods: {
+    deploySite() {
+      console.log(`this.$refs.httpDocs: ${this.$refs.httpDocs}`)
+      for (let httpDoc of this.$refs.httpDocs.files) {
+        console.log(`httpDoc: ${Object.values(httpDoc)}`)
+        console.log(`httpDoc: ${Object.keys(httpDoc)}`)
+        console.log(`httpDocName: ${httpDoc.name}`)
+      }
+      // fetch(`http://localhost:4000/api/sites/create/?sitedomain=${Math.floor(Math.random() * 5000)}-project.sites.hosting.herokuapp.com&deployerid=${this.deployer._id}`, {
+      //   mode: 'cors',
+      //   method: 'GET'
+      // }).then(response => response.body).then(rb  => {
+      //     const reader = rb.getReader()
+      //     return new ReadableStream({
+      //         start(controller) {
+      //             function push() {
+      //                 reader.read().then( ({done, value}) => {
+      //                     if (done) {
+      //                         controller.close();
+      //                         return;
+      //                     }
+      //                     controller.enqueue(value)
+      //                     push()
+      //                 })
+      //             }
+      //           push()
+      //         }
+      //     })
+      // }).then(stream => {
+      //     return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+      // })
+      // .then(result => {
+      //   console.log(`recaptcha: ${JSON.parse(result).recaptcha}`)
+      //   this.reCaptcha = JSON.parse(result).recaptcha
+      // })
+    },
     selectDomains() {
       if (this.domain.length >= 1) {
         this.$router.push({ name: 'DomainsRegister' })

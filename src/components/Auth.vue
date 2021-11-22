@@ -26,6 +26,9 @@
                 <input v-if="activeTab === 'register'" placeholder="Мобильный телефон" v-model="phone" type="text" class="form-control w-75 authInput" />
                 <input v-else-if="activeTab === 'login'" placeholder="Пароль" v-model="password" type="text" class="form-control w-75 authInput" />
             </div>
+            <div class="reCaptcha" v-html="reCaptcha">
+                
+            </div>
             <span v-if="activeTab === 'register'" class="authRules">
                 Продолжая регистрацию, вы соглашаетесь с 
                 <span class="authPolitic">
@@ -63,6 +66,9 @@
 </template>
 
 <script>
+
+import * as jwt from 'jsonwebtoken'
+
 export default {
     name: 'Auth',
     data() {
@@ -71,6 +77,13 @@ export default {
             login: '',
             phone: '',
             password: '',
+            token: null
+        }
+    },
+    props: {
+        reCaptcha: {
+            type: String,
+            default: '<h1>reCaptcha</h1>'
         }
     },
     emits: [
@@ -137,6 +150,13 @@ export default {
             .then(result => {
                 if(JSON.parse(result).status === 'OK') {
                     alert(`Deployer ${this.login} вошел`)
+                    this.token = jwt.sign({
+                        deployer: JSON.parse(result).deployer._id
+                        }, 'hostingsecret', { expiresIn: '5m' })
+                    window.localStorage.setItem("hostingtoken", this.token)
+
+                    this.$router.push({ name: "DomainsRegister" })
+
                 } else if(JSON.parse(result).status === 'Error') {
                     alert('Неправильно указан логин или пароль')
                 }
@@ -245,6 +265,12 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .reCaptcha {
+        width: 250px;
+        height: 150px;
+        /* background-color: rgb(200, 200, 200); */
     }
 
 </style>

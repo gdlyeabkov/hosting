@@ -6,6 +6,11 @@
         <span class="aboutServiceHeader">
           Платформа для создания сайтов
         </span>
+        <div >
+          {{
+            reCaptcha
+          }}
+        </div>
         <span class="aboutServiceDesc">
           Создайте сайт или блог, откройте интернет-магазин даже если вы этого не делали
         </span>
@@ -508,7 +513,64 @@ export default {
       domainsZones: []
     }
   },
+  mounted() {
+    fetch(`http://localhost:4000/api/recaptcha/`, {
+      mode: 'cors',
+      method: 'GET'
+    }).then(response => response.body).then(rb  => {
+        const reader = rb.getReader()
+        return new ReadableStream({
+            start(controller) {
+                function push() {
+                    reader.read().then( ({done, value}) => {
+                        if (done) {
+                            controller.close();
+                            return;
+                        }
+                        controller.enqueue(value)
+                        push()
+                    })
+                }
+              push()
+            }
+        })
+    }).then(stream => {
+        return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+    })
+    .then(result => {
+      console.log(`recaptcha: ${JSON.parse(result).recaptcha}`)
+      this.reCaptcha = JSON.parse(result).recaptcha
+    })
+  },
   methods: {
+    getRecaptcha() {
+      fetch(`http://localhost:4000/api/recaptcha/`, {
+        mode: 'cors',
+        method: 'GET'
+      }).then(response => response.body).then(rb  => {
+          const reader = rb.getReader()
+          return new ReadableStream({
+              start(controller) {
+                  function push() {
+                      reader.read().then( ({done, value}) => {
+                          if (done) {
+                              controller.close();
+                              return;
+                          }
+                          controller.enqueue(value)
+                          push()
+                      })
+                  }
+                  push()
+              }
+          })
+      }).then(stream => {
+          return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+      })
+      .then(result => {
+        console.log(`recaptcha: ${JSON.parse(result).recaptcha}`)
+      })
+    },
     selectDomains() {
       if (this.domain.length >= 1) {
         this.$router.push({ name: 'DomainsRegister' })
