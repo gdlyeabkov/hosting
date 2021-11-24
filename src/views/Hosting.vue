@@ -680,19 +680,29 @@
       </div>
 
       <div>
-        <form enctype="multipart/form-data" method="POST" :action="`http://localhost:4000/api/sites/upload/?deployerid=${deployer._id}&sitedomain=${selectedDomain}`">
-          <input  type="file" name="myFile" ref="httpDocs" class="form-control" />
-          <select v-model="selectedDomain" class="form-select h-75 w-25" aria-label="Default select example">
-            <option v-for="domain in deployer.domains.map(domain => domain.id)" :value="domain" :key="domain">
-              {{ domain }}
+        <form class="sitesForm" enctype="multipart/form-data" method="POST" :action="`http://localhost:4000/api/sites/upload/?deployerid=${deployer._id}&sitedomain=${selectedDomain}`">
+          <input  type="file" name="myFile" ref="httpDocs" class="formElement w-25 form-control" />
+          <select v-model="selectedDomain" class="formElement form-select h-75 w-25" aria-label="Default select example">
+            <option v-for="domain in myDomains" :value="domain.name" :key="domain._id">
+              {{ domain.name }}
             </option>
           </select>
-          <button type="submit" class="btn btn-success">
+          <button type="submit" class="formElement btn btn-success">
             Опубликовать Сайт
           </button>
           <!-- <button @click="deploySite" class="btn btn-success">
             Опубликовать Сайт
           </button> -->
+          <div v-for="domain in myDomains" :key="domain._id" class="visitDomain" @click="visitDomain(domain)">
+            <span :class="{ domainStatus: true, domainWorked: domainStatus, domainError: !domainStatus }">
+
+            </span>
+            <span>
+              {{
+                domain.name
+              }}
+            </span>
+          </div>
         </form>
       </div>
 
@@ -719,6 +729,8 @@ export default {
         domains: []
       },
       selectedDomain: '',
+      myDomains: [],
+      domainStatus: true,
       token: window.localStorage.getItem('hostingtoken')
     }
   },
@@ -753,8 +765,11 @@ export default {
         .then(result => {
           if(JSON.parse(result).status === 'OK') {
             this.deployer = JSON.parse(result).deployer
+            // console.log('получил деплоера')
             if (this.deployer.domains.length >= 1) {
-              this.selectedDomain = this.deployer.domains.map(domain => domain.id)[0]
+              // console.log('получил деплоера')
+              this.getDomains(this.deployer.domains.map(domain => domain.id))
+              this.selectedDomain = this.myDomains.map(domain => domain._id)[0].name
             }
           }
         })    
@@ -762,6 +777,41 @@ export default {
     })
   },
   methods: {
+    visitDomain(domain) {
+      window.open(`http://localhost:4000/api/sites/get/?domain=${domain.name}`)
+    },
+    getDomains(domainsIds) {
+      console.log(`получил домены: ${this.deployer.domains.map(domain => domain.id)}`)
+      fetch(`http://localhost:4000/api/domains/get/?domainsids=${domainsIds}`, {
+        mode: 'cors',
+        method: 'GET'
+      }).then(response => response.body).then(rb  => {
+          const reader = rb.getReader()
+          return new ReadableStream({
+              start(controller) {
+                  function push() {
+                      reader.read().then( ({done, value}) => {
+                          if (done) {
+                              controller.close();
+                              return;
+                          }
+                          controller.enqueue(value)
+                          push()
+                      })
+                  }
+                push()
+              }
+          })
+      }).then(stream => {
+          return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+      })
+      .then(result => {
+        if (JSON.parse(result).status === 'OK') {
+          this.myDomains = JSON.parse(result).domains
+          this.selectedDomain = this.myDomains[0].name
+        }
+      })
+    },
     deploySite() {
       console.log(`this.$refs.httpDocs: ${this.$refs.httpDocs}`)
       for (let httpDoc of this.$refs.httpDocs.files) {
@@ -1386,6 +1436,45 @@ export default {
     font-size: 20px;
     color: rgb(75, 75, 75);
     margin: 0px 25px;
+  }
+
+  .visitDomain {
+    box-sizing: border-box;
+    padding: 15px 5px;
+    border: 1px solid rgb(25, 25, 100);
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    border-radius: 8px;
+    margin: 15px 0px;
+    width: 175px;
+    background-color: rgb(100, 100, 100);
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+  }
+
+  .domainStatus {
+    border-radius: 100%;
+    width: 8px;
+    height: 8px;
+    margin: 0px 15px;
+  }
+
+  .domainWorked {
+    background-color: rgb(0, 175, 0);
+  }
+
+  .domainError {
+    background-color: rgb(255, 0, 0);
+  }
+
+  .formElement {
+    margin: 25px 0px;
+  }
+
+  .sitesForm {
+    box-sizing: border-box;
+    padding: 25px;
   }
 
 </style>

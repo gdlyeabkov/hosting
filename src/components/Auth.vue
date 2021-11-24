@@ -24,7 +24,7 @@
             <div class="authInputs">
                 <input placeholder="Электронная почта" v-model="login" type="text" class="form-control w-75 authInput" />
                 <input v-if="activeTab === 'register'" placeholder="Мобильный телефон" v-model="phone" type="text" class="form-control w-75 authInput" />
-                <input v-else-if="activeTab === 'login'" placeholder="Пароль" v-model="password" type="text" class="form-control w-75 authInput" />
+                <input v-else-if="activeTab === 'login'" placeholder="Пароль" v-model="password" type="password" class="form-control w-75 authInput" />
             </div>
             <div class="reCaptcha" v-html="reCaptcha">
                 
@@ -155,7 +155,7 @@ export default {
                         }, 'hostingsecret', { expiresIn: '5m' })
                     window.localStorage.setItem("hostingtoken", this.token)
 
-                    this.$router.push({ name: "DomainsRegister" })
+                    this.$router.push({ name: "Hosting" })
 
                 } else if(JSON.parse(result).status === 'Error') {
                     alert('Неправильно указан логин или пароль')

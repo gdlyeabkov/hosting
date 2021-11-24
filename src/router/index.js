@@ -9,6 +9,7 @@ import ServersAndDataCenters from '../views/ServersAndDataCenters.vue'
 import VPS from '../views/VPS.vue'
 import SSL from '../views/SSL.vue'
 import Hosting from '../views/Hosting.vue'
+import WebView from '../views/WebView.vue'
 
 Vue.use(VueRouter)
 
@@ -57,6 +58,11 @@ const routes = [
     path: '/hosting',
     name: 'Hosting',
     component: Hosting
+  },
+  {
+    path: '/sites/get',
+    name: 'WebView',
+    component: WebView
   }
 ]
 

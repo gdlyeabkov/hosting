@@ -54,9 +54,11 @@
             </span>
             <div class="headerBreadcrumbsItems">
                 <span class="headerBreadcrumbsItem" v-for="breadcrumbsItem in breadcrumbsItems" :key="breadcrumbsItem">
-                    {{
-                        breadcrumbsItem
-                    }}
+                    <router-link :to="{ name: breadcrumbsItem.link }">
+                        {{
+                            breadcrumbsItem.name
+                        }}
+                    </router-link>
                 </span>
             </div>
         </div>

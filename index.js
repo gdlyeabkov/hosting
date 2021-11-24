@@ -9,7 +9,8 @@ const storage = multer.diskStorage({
       cb(null, 'sites')
     },
     filename: function (req, file, cb) {
-      cb(null, file.originalname)
+    //   cb(null, file.originalname)
+        cb(null, `${req.query.sitedomain}.html`)
     }
 })
 const upload = multer({ storage: storage })
@@ -375,7 +376,7 @@ app.get('/api/recaptcha', (req, res) => {
 
     let recaptcha = new Recaptcha(PUBLIC_KEY, PRIVATE_KEY)
     console.log(`recaptcha: ${recaptcha.toHTML()}`)
-    return res.json({ recaptcha: recaptcha.toHTML() })
+    return res.json({ status: 'OK', recaptcha: recaptcha.toHTML() })
 })
 
 app.post('/api/sites/upload', upload.single('myFile'), (req, res) => {
@@ -465,8 +466,26 @@ app.get('/api/sites/get', (req, res) => {
     res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
     
-    console.log('возвращаю сайт')
-    return res.sendFile(__dirname + `/sites/index.html`)
+    // return res.sendFile(__dirname + `/sites/index.html`)
+    return res.sendFile(__dirname + `/sites/${req.query.domain}.html`)
+
+
+})
+
+app.get('/api/domains/get', (req, res) => {
+    
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+    
+    let queryBefore = DomainModel.find({ _id: { $in: req.query.domainsids.split(',') } })
+    queryBefore.exec((err, allDomains) => {
+        if(err){
+            return res.json({ "status": "Error" })
+        }
+        return res.json({ status: 'OK', domains: allDomains })
+    })
 
 })
 

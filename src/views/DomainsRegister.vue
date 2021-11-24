@@ -1,6 +1,9 @@
 <template>
     <div class="domainsRegisterContainer">
         <div class="aside">
+            <span class="material-icons logoutBtn" @click="$router.push({ name: 'Home' })">
+                logout
+            </span>
             <div class="input-group inputRailwayDatePicker">
                 <span  class="material-icons input-group-text" id="basic-addon1">
                     search
@@ -415,6 +418,10 @@ export default {
         box-sizing: border-box;
         padding: 5px;
         color: rgb(150, 150, 150);
+        cursor: pointer;
+    }
+
+    .logoutBtn {
         cursor: pointer;
     }
 

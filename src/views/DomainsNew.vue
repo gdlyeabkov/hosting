@@ -1,6 +1,29 @@
 <template>
   <div class="">
-    <Header :showBreadcrumbs="true" :breadcrumbsHeader="'Домены'" :breadcrumbsItems="['Зарегистрировать домен', 'Продлить', 'Подобрать домен', 'Освобождающиеся домены', 'Магазин доменов', 'Всё']" />
+    <Header :showBreadcrumbs="true" :breadcrumbsHeader="'Домены'" :breadcrumbsItems="[{
+      name: 'Зарегистрировать домен',
+      link: 'DomainsRegister'  
+    }, 
+    {
+      name: 'Продлить',
+      link: 'DomainsRegister'
+    },
+    {
+      name: 'Подобрать домен',
+      link: 'DomainsRegister'
+    },
+    {
+      name: 'Освобождающиеся домены',
+      link: 'DomainsRegister'
+    },
+    {
+      name: 'Магазин доменов',
+      link: 'DomainsRegister'
+    },
+    {
+      name: 'Всё',
+      link: 'DomainsRegister'
+    }]" />
     <div class="pageContent">
       <span class="domainsRegisterLabel">
         Зарегистрировать домен
